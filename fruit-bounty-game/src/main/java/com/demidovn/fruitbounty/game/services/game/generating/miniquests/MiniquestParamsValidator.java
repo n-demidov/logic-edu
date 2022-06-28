@@ -1,10 +1,10 @@
 package com.demidovn.fruitbounty.game.services.game.generating.miniquests;
 
+import com.demidovn.fruitbounty.game.exceptions.NotImplementedException;
 import com.demidovn.fruitbounty.game.model.miniquests.MiniquestGeneratorInfo;
 import com.demidovn.fruitbounty.game.model.quest.NonTargetAnswers;
 import com.demidovn.fruitbounty.game.model.quest.OutOfStatements;
 import lombok.extern.slf4j.Slf4j;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
 import java.util.Map;

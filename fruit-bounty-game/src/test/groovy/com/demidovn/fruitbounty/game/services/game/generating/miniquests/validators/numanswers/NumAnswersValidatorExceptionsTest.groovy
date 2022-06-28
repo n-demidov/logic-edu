@@ -1,8 +1,8 @@
 package com.demidovn.fruitbounty.game.services.game.generating.miniquests.validators.numanswers
 
+import com.demidovn.fruitbounty.game.exceptions.NotImplementedException
 import com.demidovn.fruitbounty.game.model.miniquests.validator.ValidParams
 import com.demidovn.fruitbounty.game.model.quest.OutOfStatements
-import sun.reflect.generics.reflectiveObjects.NotImplementedException
 
 class NumAnswersValidatorExceptionsTest extends BaseValidatorTest {
 
