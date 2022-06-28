@@ -1,0 +1,43 @@
+version: 1
+editorNote: "random-2"
+intro: "{subjects} играют по одному виду спорта: {objects}.<br>
+  Кто играет в {random_object}?<br><br>
+  
+  Нажмите на кнопку 'Сделать действие', чтобы начать опрашивать очевидцев.<br><br>
+  
+  Правила:<br>
+  - Чем меньше Вы потратите ходов и жетонов Влияния, тем больше получите очков за прохождение квеста."
+subjects: [ норвежец, англичанин, швед, китаец, японец, кореец, француз, датчанин, египтянин ]
+
+plusVerbPositive: играет в
+plusVerbNegative: не играет в
+minusVerbPositive:
+  - не любит
+  - не имеет экипировки для игры в
+  - не имеет клубной карты для игры в
+minusVerbNegative:
+  - любит
+  - имеет экипировку для игры в
+  - имеет клубную карту для игры в
+
+objects: [ сквош, крикет, снукер, гольф, теннис, поло, дартс, бадминтон, футбол ]
+
+hooksVerbs: [опросить, расспросить, узнать информацию у, собрать данные у]
+minusHooks: [швейцаров, администраторов, официантов, кедди, служанок, работников клуба]
+plusHooks: [игроков, болельщиков, судей]
+
+miniquestIntro: "<b>Опрос {hookName}</b> дал следующие данные:
+  <br>{statements}<br>
+  Впоследствии выяснилось, что только одно утверждение верно, а другие ложны.
+  {introInsert}
+  Подсказка: используя эти данные можно установить во что {introInsert2} {random_subject}."
+positiveMiniquestIntro: "<br><br>"
+negativeMiniquestIntro: "Также стало известно, что {random_subject} {verb} один из этих трёх видов спорта и никак не мог бы в него играть.<br><br>"
+positiveMiniquestIntro2: "играет"
+negativeMiniquestIntro2: "не играет"
+
+statementsNumMin: 3
+statementsNumMax: 5
+repeatsLimit: 4
+contradictionsEnabled: true
+answerOutOfStatementsChance: 14

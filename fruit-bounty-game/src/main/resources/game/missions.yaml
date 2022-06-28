@@ -1,0 +1,1141 @@
+version: 1
+missions:
+  -
+    type: EDU
+    editorNote: "simple miniquest: #1, edu"
+    intro: "<b>Обучающая игра</b><br>
+      Пример решения задачи <b>методом рассуждений</b>.
+      Этим способом обычно решают несложные логические задачи.<br><br>
+      
+      Задача:<br>
+      <b>Вадим</b> изучает иностранный язык. В учебном заведении, которое он посещает, преподают <b>китайский</b> и <b>арабский</b>.
+      На вопрос, какой язык изучает Вадим, его знакомые ответили:<br>
+      • Боря: «Вадим не изучает китайский.»<br>
+      • Петя: «Вадим изучает арабский.»<br>
+      • Коля: «Вадим не изучает арабский.»<br><br>
+      Впоследствии выяснилось, что <b>только одно утверждение верно</b>, а другие ложны. Какой язык изучает Вадим?"
+    subjects: [ Вадим ]
+    objects: [ китайский, арабский ]
+    rightAnswer: китайский
+    solution: "<b>Решение.</b> Имеется три утверждения:<br>
+      1. Вадим не изучает китайский<br>
+      2. Вадим изучает арабский<br>
+      3. Вадим не изучает арабский<br><br>
+      а) Предположим, что первое утверждение истинно. Значит второе и третье - должны быть ложны. Но тогда получается, что Вадим не изучает ни китайский, ни арабский.
+       А это противоречит условию задачи, т.к. молодой человек изучает ровно один язык. Следовательно, первое утверждение не может быть истинным; оно должно быть ложным.<br>
+      б) Если верно второе утверждение, то первое должно быть ложным. При этом получается, что Вадим изучает и арабский и китайский.
+       Это противоречит условию задачи, поэтому второе утверждение тоже ложно.<br>
+      в) Остается считать верным третье утверждение, а первое и второе — ложными. Таким образом, Вадим не изучает арабский. Он учит китайский.<br><br>
+      <b>Ответ:</b> Вадим изучает китайский язык."
+  -
+    type: EDU
+    editorNote: "simple miniquest: #2, edu"
+    intro: "<b>Вадим</b> изучает иностранный язык. В учебном заведении, которое он посещает, преподают <b>японский</b> и <b>арабский</b>.
+      На вопрос, какой язык изучает Вадим, трое его знакомых ответили:<br>
+      • Ваня: «Вадим изучает японский.»<br>
+      • Петя: «Согласен, Вадим изучает японский.»<br>
+      • Коля: «Вадим изучает арабский.»<br><br>
+      Впоследствии выяснилось, что <b>только одно утверждение верно</b>, а другие ложны. Какой язык изучает Вадим?"
+    subjects: [ Вадим ]
+    objects: [ японский, арабский ]
+    rightAnswer: арабский
+    solution: "<b>Решение.</b> Имеется 3 утверждения:<br>
+      1. Вадим изучает японский<br>
+      2. Вадим изучает японский<br>
+      3. Вадим изучает арабский<br><br>
+      а) Предположим, что первое утверждение истинно. Значит второе и третье - должны быть ложны.
+       Но тогда получается, противоречие между первым и вторым суждениями.
+       Следовательно, первое утверждение не может быть истинным; оно должно быть ложным.<br>
+      б) Аналогично варианту (а) - получаем, что второе утверждение тоже ложно.<br>
+      в) Остается считать верным третье утверждение, а первое и второе — ложными. Таким образом, Вадим не изучает японский. Он учит арабский.<br><br>
+      <b>Ответ:</b> Вадим изучает арабский язык."
+  -
+    type: STANDARD
+    editorNote: "simple miniquest: #3"
+    intro: "{subjects} изучает иностранный язык. Это может быть один из: {objects}.
+      Его знакомые дали следующие фразы:<br>{statements}<br>
+      Впоследствии выяснилось, что только одно утверждение верно, а другие ложны.
+      Какой язык изучает {answer_subject}?"
+    subjects: [ Сергей ]
+    verb: изучает
+    objects: [ корейский, норвежский, итальянский ]
+    sentencesNum: 3
+    trueStatementsNum: 1
+    repeatsLimit: 3
+    contradictionsEnabled: false
+    answerOutOfStatements: STRICTLY_IN_STATEMENTS
+  -
+    type: EDU
+    editorNote: "simple miniquest: #4, edu"
+    intro: "<b>Вадим</b> изучает иностранный язык. В учебном заведении, которое он посещает, преподают <b>испанский</b> и <b>итальянский</b>.
+      На вопрос, какой язык изучает Вадим, трое его знакомых ответили:<br>
+      • Ваня: «Вадим не изучает испанский.»<br>
+      • Петя: «Вадим не изучает итальянский.»<br>
+      • Коля: «Вадим изучает итальянский.»<br><br>
+      Впоследствии выяснилось, что <b>только одно утверждение верно</b>, а другие ложны. Какой язык изучает Вадим?"
+    subjects: [ Вадим ]
+    objects: [ испанский, итальянский ]
+    rightAnswer: испанский
+    solution: "<b>Решение.</b> Имеется 3 утверждения:<br>
+      1. Вадим не изучает испанский<br>
+      2. Вадим не изучает итальянский<br>
+      3. Вадим изучает итальянский<br><br>
+      а) Предположим, что первое утверждение истинно. Значит второе и третье - должны быть ложны.
+       Но тогда получается, противоречие между вторым и третьим суждениями.
+       Следовательно, первое утверждение не может быть истинным; оно должно быть ложным.<br>
+      б) Если взять за истину второе суждение, то получится, что Вадим не изучает итальянский, он учит испанский. Тут противоречий нет.<br>
+      в) Проверим третье суждение. Если оно истинно, то Вадим изучает и итальянский и испанский.
+       А это противоречит условию задачи, т.к. молодой человек изучает ровно один язык.<br><br>
+      <b>Ответ:</b> Истинно второе суждение, а Вадим изучает испанский язык."
+  -
+    type: STANDARD
+    editorNote: "simple miniquest: #5"
+    intro: "{subjects} изучает иностранный язык. Это может быть один из: {objects}.
+      Его знакомые дали следующие фразы:<br>{statements}<br>
+      Впоследствии выяснилось, что только одно утверждение верно, а другие ложны.
+      Какой язык изучает {answer_subject}?"
+    subjects: [ Сергей ]
+    verb: изучает
+    objects: [ корейский, норвежский, турецкий ]
+    sentencesNum: 3
+    trueStatementsNum: 1
+    repeatsLimit: 1
+    contradictionsEnabled: true
+    answerOutOfStatements: STRICTLY_IN_STATEMENTS
+  -
+    type: STANDARD
+    editorNote: "simple miniquest: #6"
+    intro: "{subjects} имеет обыкновение посещать спортивный клуб по четвергам.
+      По высказываниям его окружения он особенно неравнодушен к следующим видам спорта: {objects}.
+      Его знакомые дали следующие фразы:<br>{statements}<br>
+      Впоследствии выяснилось, что только одно утверждение верно, а другие ложны.
+      Во что играет {answer_subject}?"
+    subjects: [ Сэр Этелни ]
+    verb: играет в
+    objects: [ сквош, крикет, снукер, гольф ]
+    sentencesNum: 4
+    trueStatementsNum: 1
+    repeatsLimit: 4
+    contradictionsEnabled: false
+    answerOutOfStatements: STRICTLY_IN_STATEMENTS
+  -
+    type: STANDARD
+    editorNote: "simple miniquest: #7"
+    intro: "{subjects} имеет обыкновение посещать спортивный клуб по четвергам.
+      По высказываниям его окружения он особенно неравнодушен к следующим видам спорта: {objects}.
+      Его знакомые дали следующие фразы:<br>{statements}<br>
+      Впоследствии выяснилось, что только одно утверждение верно, а другие ложны.
+      Во что играет {answer_subject}?"
+    subjects: [ Сэр Этелни ]
+    verb: играет в
+    objects: [ сквош, крикет, снукер, гольф ]
+    sentencesNum: 5
+    trueStatementsNum: 1
+    repeatsLimit: 1
+    contradictionsEnabled: true
+    answerOutOfStatements: STRICTLY_IN_STATEMENTS
+  -
+    type: STANDARD
+    editorNote: "simple miniquest: #8"
+    intro: "{subjects} имеет обыкновение посещать спортивный клуб по четвергам.
+      По высказываниям его окружения он особенно неравнодушен к следующим видам спорта: {objects}.
+      Его знакомые дали следующие фразы:<br>{statements}<br>
+      Впоследствии выяснилось, что только одно утверждение верно, а другие ложны.
+      Во что играет {answer_subject}?"
+    subjects: [ Сэр Этелни ]
+    verb: играет в
+    objects: [ сквош, крикет, снукер, гольф, теннис, поло ]
+    sentencesNum: 6
+    trueStatementsNum: 1
+    repeatsLimit: 3
+    contradictionsEnabled: true
+    answerOutOfStatements: STRICTLY_IN_STATEMENTS
+  -
+    type: STANDARD
+    editorNote: "simple miniquest: #9, answerOutOfStatements"
+    intro: "{subjects} имеет обыкновение посещать спортивный клуб по четвергам.
+      По высказываниям его окружения он особенно неравнодушен к следующим видам спорта: {objects}.
+      Его знакомые дали следующие фразы:<br>{statements}<br>
+      Впоследствии выяснилось, что только одно утверждение верно, а другие ложны.
+      Во что играет {answer_subject}?"
+    subjects: [ Сэр Этелни ]
+    verb: играет в
+    objects: [ сквош, крикет, снукер, гольф ]
+    sentencesNum: 4
+    trueStatementsNum: 1
+    repeatsLimit: 2
+    contradictionsEnabled: false
+    answerOutOfStatements: STRICTLY_OUT_OF_STATEMENTS
+  -
+    type: STANDARD
+    editorNote: "simple miniquest: #10"
+    intro: "{subjects} имеет обыкновение посещать спортивный клуб по четвергам.
+      По высказываниям его окружения он особенно неравнодушен к следующим видам спорта: {objects}.
+      Его знакомые дали следующие фразы:<br>{statements}<br>
+      Впоследствии выяснилось, что только одно утверждение верно, а другие ложны.
+      Во что играет {answer_subject}?"
+    subjects: [ Сэр Этелни ]
+    verb: играет в
+    objects: [ сквош, крикет, снукер, гольф, теннис, поло, дартс, бадминтон, футбол ]
+    sentencesNum: 7
+    trueStatementsNum: 1
+    repeatsLimit: 2
+    contradictionsEnabled: false
+    answerOutOfStatements: STRICTLY_IN_STATEMENTS
+
+  -
+    type: EDU
+    editorNote: "table-1 quest, simple: #1, edu"
+    intro: "Пример решения задачи <b>при помощи таблиц</b>.<br>
+      При использовании этого способа - условия, которые содержит задача, и результаты рассуждений фиксируются с помощью специально составленных таблиц.<br>
+      1. Читаем задачу, определяем вопрос задачи.<br>
+      2. Определяем объекты.<br>
+      3. Определяем размеры таблицы и строим её.<br>
+      4. Заполняем названия столбцов и строк.<br>
+      5. С помощью \"-\" и \"+\" отразим условие задачи.<br>
+      6. Путем умозаключений находим решение.<br><br>
+      
+      Задача:<br>
+      
+      Михаил, Вадим и Сергей изучают различные иностранные языки: {objects}. Известно, что:<br>
+      • Вадим изучает китайский.<br>
+      • Михаил не изучает японский. <br>
+      Кто изучает арабский?"
+    subjects: [ Михаил, Вадим, Сергей ]
+    objects: [ китайский, арабский, японский ]
+    askAbout: SUBJECT
+    table: true
+    rightAnswer: Михаил
+    solution:
+      "1. Составим таблицу 3х3 и заполним клетки уже известными данными:<br>
+      <table class='table table-bordered table-condensed table-content-centered'>
+        <tr>
+          <td></td>
+          <td>Китайский</td>
+          <td>Арабский</td>
+          <td>Японский</td>
+        </tr>
+        <tr>
+          <td>М</td>
+          <td></td>
+          <td></td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>В</td>
+          <td>+</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>С</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      
+      2. Исходя из таблицы становится легко определить, что Вадим не учит ни арабский ни японский (так как он уже учит китайский).
+      А также то, что ни Михаил ни Сергей не могут учить китайский (так как его уже учит Вадим). Обновим таблицу новыми данными:
+      <table class='table table-bordered table-condensed table-content-centered'>
+        <tr>
+          <td></td>
+          <td>Китайский</td>
+          <td>Арабский</td>
+          <td>Японский</td>
+        </tr>
+        <tr>
+          <td>М</td>
+          <td>-</td>
+          <td></td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>В</td>
+          <td>+</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>С</td>
+          <td>-</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      
+      3. В результате постепенного заполнения таблицы - путем исключений -
+      становится видно, что Михаил учит арабский, а Сергей - японский.
+      <table class='table table-bordered table-condensed table-content-centered'>
+        <tr>
+          <td></td>
+          <td>Китайский</td>
+          <td>Арабский</td>
+          <td>Японский</td>
+        </tr>
+        <tr>
+          <td>М</td>
+          <td>-</td>
+          <td>+</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>В</td>
+          <td>+</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>С</td>
+          <td>-</td>
+          <td></td>
+          <td>+</td>
+        </tr>
+      </table>      
+      
+      <b>Ответ:</b> арабский изучает Михаил"
+  -
+    type: STANDARD
+    editorNote: "table-1 quest, simple: #2"
+    intro: "{subjects} изучают различные иностранные языки: {objects}.
+      Известно, что:<br>{statements}<br>
+      Кто изучает {answer_object}?"
+    subjects: [ Вадим, Сергей, Михаил ]
+    verb: изучает
+    objects: [ китайский, японский, арабский ]
+    askAbout: SUBJECT
+    table: true
+    minAnswerInfers: 1
+    maxAnswerInfers: 1
+  -
+    type: STANDARD
+    editorNote: "table-1 quest, simple: #3"
+    intro: "{subjects} изучают различные иностранные языки: {objects}.
+      Известно, что:<br>{statements}<br>
+      Кто изучает {answer_object}?"
+    subjects: [ Вадим, Сергей, Михаил ]
+    verb: изучает
+    objects: [ китайский, японский, арабский ]
+    askAbout: SUBJECT
+    table: true
+    minAnswerInfers: 2
+    maxAnswerInfers: 2
+  -
+    type: STANDARD
+    editorNote: "table-1 quest, simple: #4"
+    intro: "{subjects} изучают различные иностранные языки: {objects}.
+      Известно, что:<br>{statements}<br>
+      Кто изучает {answer_object}?"
+    subjects: [ Вадим, Сергей, Михаил ]
+    verb: изучает
+    objects: [ китайский, японский, арабский ]
+    askAbout: SUBJECT
+    table: true
+    minAnswerInfers: 2
+    maxAnswerInfers: 2
+  -
+    type: STANDARD
+    editorNote: "table-1 quest, simple: #5"
+    intro: "{subjects} изучают различные иностранные языки: {objects}.
+      Известно, что:<br>{statements}<br>
+      Кто изучает {answer_object}?"
+    subjects: [ Вадим, Сергей, Михаил, Петр ]
+    verb: изучает
+    objects: [ китайский, японский, арабский, испанский ]
+    askAbout: SUBJECT
+    table: true
+    minAnswerInfers: 2
+    maxAnswerInfers: 2
+
+  -
+    type: STANDARD
+    editorNote: "simple inversed miniquest: #1"
+    intro: "{subjects} был в кофейне тем вечером. В наличии имелось: {objects}.
+      Известно, что на один из напитков у него аллергия, поэтому он не стал бы его пить.
+      Посетители дали следующие фразы:<br>{statements}<br>
+      Впоследствии выяснилось, что только одно утверждение верно, а другие ложны.
+      Что <b>не</b> пил {answer_subject}?"
+    subjects: [ Джон ]
+    verbPositive: имеет аллергию на
+    verbNegative: не имеет аллергии на
+    objects: [ латте, капучино, флэт уайт ]
+    sentencesNum: 3
+    trueStatementsNum: 1
+    repeatsLimit: 3
+    contradictionsEnabled: true
+  -
+    type: STANDARD
+    editorNote: "simple inversed miniquest: #2"
+    intro: "{subjects} был в кофейне тем вечером. В наличии имелось: {objects}.
+      Известно, что он равнодушен к одному из напитков, поэтому не стал бы его пить при наличии альтернатив.
+      Посетители дали следующие фразы:<br>{statements}<br>
+      Впоследствии выяснилось, что только одно утверждение верно, а другие ложны.
+      Что не пил {answer_subject}?"
+    subjects: [ Роберт ]
+    verb: равнодушен к
+    objects: [ латте, капучино, флэт уайт, эспрессо ]
+    sentencesNum: 4
+    trueStatementsNum: 1
+    repeatsLimit: 4
+    contradictionsEnabled: true
+  -
+    type: STANDARD
+    editorNote: "simple inversed miniquest: #3"
+    intro: "{subjects} изучает иностранный язык. Это может быть один из: {objects}.
+      Однако, известно, что {subjects} не любит один из этих языков; и никогда не стал бы его изучать.
+      Его знакомые дали следующие фразы:<br>{statements}<br>
+      Впоследствии выяснилось, что только одно утверждение верно, а другие ложны.
+      Что не изучает {answer_subject}?"
+    subjects: [ Сергей ]
+    verbPositive: не любит
+    verbNegative: любит
+    objects: [ корейский, норвежский, турецкий ]
+    sentencesNum: 4
+    trueStatementsNum: 1
+    repeatsLimit: 4
+    contradictionsEnabled: true
+  -
+    type: STANDARD
+    editorNote: "simple inversed miniquest: #4"
+    intro: "{subjects} имеет обыкновение посещать спортивный клуб по четвергам.
+      В круг интересов членов клуба входят следующие виды спорта: {objects}.
+      Однако, известно, что {subjects} испытывает холодность к одному из этих видов спорта в связи со спортивной травмой, полученной им в далёком детстве.
+      В связи с чем, он не стал бы играть в этот вид спорта ни при каких обстоятельствах.
+      Его знакомые дали следующие фразы:<br>{statements}<br>
+      Впоследствии выяснилось, что только одно утверждение верно, а другие ложны.
+      Во что не играет {answer_subject}?"
+    subjects: [ Сэр Этелни ]
+    verbPositive: испытывает холодность к игре в
+    verbNegative: не испытывает холодности к игре в
+    objects: [ сквош, крикет, снукер, гольф, теннис ]
+    sentencesNum: 4
+    trueStatementsNum: 1
+    repeatsLimit: 4
+    contradictionsEnabled: true
+  -
+    type: STANDARD
+    editorNote: "simple inversed miniquest: #5"
+    intro: "{subjects} имеет обыкновение посещать спортивный клуб по четвергам.
+          В круг интересов членов клуба входят следующие виды спорта: {objects}.
+          Однако, известно, что {subjects} не уважает один из этих видов спорта.
+          В связи с чем, он не стал бы играть в этот вид спорта ни при каких обстоятельствах.
+          Его знакомые дали следующие фразы:<br>{statements}<br>
+          Впоследствии выяснилось, что только одно утверждение верно, а другие ложны.
+          Во что не играет {answer_subject}?"
+    subjects: [ Сэр МакРоберт ]
+    verbPositive: не уважает
+    verbNegative: уважает
+    objects: [ сквош, крикет, снукер, гольф, теннис ]
+    sentencesNum: 5
+    trueStatementsNum: 1
+    repeatsLimit: 5
+    contradictionsEnabled: true
+
+  -
+    type: STANDARD
+    editorNote: "simple miniquest with n-trueStatements: #1"
+    intro: "{subjects} занимается спортом. Это может быть один из: {objects}.
+      Её друзья дали следующие фразы:<br>{statements}<br>
+      Впоследствии выяснилось, что 2 утверждения истинны, а другое - ложно.
+      Чем занимается {answer_subject}?"
+    subjects: [ Катя ]
+    verb: занимается
+    objects: [ плаванием, танцами, хайкингом, волейболом ]
+    sentencesNum: 3
+    trueStatementsNum: 2
+    repeatsLimit: 3
+    contradictionsEnabled: true
+  -
+    type: STANDARD
+    editorNote: "simple miniquest with n-trueStatements: #2"
+    intro: "{subjects} с подругами занимаются различными видами спорта. Девушки увлекаются: {objects}.
+      Известно, что {subjects} занимается только одним видом спорта.
+      Её друзья дали следующие фразы:<br>{statements}<br>
+      Впоследствии выяснилось, что 2 утверждения истинны, а другие - ложны.
+      Чем занимается {answer_subject}?"
+    subjects: [ Катя ]
+    verb: занимается
+    objects: [ плаванием, танцами, хайкингом, волейболом, теннисом ]
+    sentencesNum: 4
+    trueStatementsNum: 2
+    repeatsLimit: 3
+    contradictionsEnabled: true
+  -
+    type: STANDARD
+    editorNote: "simple miniquest with n-trueStatements: #3"
+    intro: "{subjects} с подругами занимаются различными видами спорта. Девушки увлекаются: {objects}.
+      Известно, что {subjects} занимается только одним видом спорта.
+      Её друзья дали следующие фразы:<br>{statements}<br>
+      Впоследствии выяснилось, что 2 утверждения истинны, а другие - ложны.
+      Чем занимается {answer_subject}?"
+    subjects: [ Катя ]
+    verb: занимается
+    objects: [ плаванием, танцами, хайкингом, волейболом, теннисом, бадминтоном ]
+    sentencesNum: 5
+    trueStatementsNum: 2
+    repeatsLimit: 3
+    contradictionsEnabled: true
+  -
+    type: STANDARD
+    editorNote: "simple miniquest with n-trueStatements: #4"
+    intro: "{subjects} с подругами занимаются различными видами спорта. Девушки увлекаются: {objects}.
+      Известно, что {subjects} занимается только одним видом спорта.
+      Её друзья дали следующие фразы:<br>{statements}<br>
+      Впоследствии выяснилось, что 3 утверждения истинны, а другие - ложны.
+      Чем занимается {answer_subject}?"
+    subjects: [ Катя ]
+    verb: занимается
+    objects: [ плаванием, танцами, хайкингом, волейболом, теннисом, бадминтоном ]
+    sentencesNum: 5
+    trueStatementsNum: 3
+    repeatsLimit: 5
+    contradictionsEnabled: true
+  -
+    type: STANDARD
+    editorNote: "simple miniquest with n-trueStatements: #5"
+    intro: "{subjects} с подругами занимаются различными видами спорта. Девушки увлекаются: {objects}.
+      Известно, что {subjects} занимается только одним видом спорта.
+      Её друзья дали следующие фразы:<br>{statements}<br>
+      Впоследствии выяснилось, что 4 утверждения истинны, а другие - ложны.
+      Во что играет {answer_subject}?"
+    subjects: [ Катя ]
+    verb: занимается
+    objects: [ плаванием, танцами, хайкингом, волейболом, теннисом, бадминтоном ]
+    sentencesNum: 5
+    trueStatementsNum: 4
+    repeatsLimit: 5
+    contradictionsEnabled: true
+
+  -
+    type: STANDARD
+    editorNote: "simple miniquest, nStatementsInSentence: #1"
+    intro: "{subjects} и ее подруги интересуются различными видами искусств: {objects}.
+      Известно, что {subjects} увлекается только одним видом искусств.
+      Её знакомые дали следующие фразы:<br>{statements}<br>
+      Причём один сказал все истинные утверждения, а другой - все ложные.      
+      Чем увлекается {answer_subject}?"
+    subjects: [ Маша ]
+    verb: занимается
+    objects: [ балетом, пением, живописью, скульптурой ]
+    sentencesNum: 2
+    statementsInSentence: 2
+    verityAllocation: [ [ true, true ], [ false, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_ALL
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "simple miniquest, nStatementsInSentence: #2"
+    intro: "{subjects} и ее подруги интересуются различными видами искусств: {objects}.
+      Известно, что {subjects} увлекается только одним видом искусств.
+      Её знакомые дали следующие фразы:<br>{statements}<br>
+      Причём 2 из них сказали все истинные утверждения, а другой - все ложные.
+      Чем увлекается {answer_subject}?"
+    subjects: [ Маша ]
+    verb: занимается
+    objects: [ балетом, пением, живописью ]
+    sentencesNum: 3
+    statementsInSentence: 2
+    verityAllocation: [ [ true, true ], [ true, true ], [ false, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_ALL
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "simple miniquest, nStatementsInSentence: #3"
+    intro: "{subjects} и ее подруги интересуются различными видами искусств: {objects}.
+      Известно, что {subjects} увлекается только одним видом искусств.
+      Её знакомые дали следующие фразы:<br>{statements}<br>
+      Причём 1 из них сказал все истинные утверждения, а другие - все ложные.
+      Чем увлекается {answer_subject}?"
+    subjects: [ Маша ]
+    verb: занимается
+    objects: [ балетом, пением, живописью, скульптурой ]
+    sentencesNum: 3
+    statementsInSentence: 2
+    verityAllocation: [ [ true, true ], [ false, false ], [ false, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_ALL
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "simple miniquest, nStatementsInSentence: #4"
+    intro: "Ученики нашли в земле {subjects}.
+      Рассматривая удивительную находку, каждый высказал по два предположения:<br>{statements}<br>
+      Учитель истории сказал ребятам, что каждый из них прав только в одном из двух предположений.
+      Но все сошлись во мнении, что артефакт может быть один из: {objects}.
+      Где изготовлен {answer_subject}?"
+    subjects: [ Cтаринный сосуд ]
+    verb: " "
+    objects: [ греческий, финикийский, египетский ]
+    askAbout: OBJECT
+    sentencesNum: 2
+    statementsInSentence: 2
+    verityAllocation: [ [ true, false ], [ true, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_ALL
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "simple miniquest, nStatementsInSentence: #5"
+    intro: "Ученики нашли в земле {subjects}.
+      Рассматривая удивительную находку, каждый высказал по два предположения:<br>{statements}<br>
+      Учитель истории сказал ребятам, что каждый из них прав только в одном из двух предположений.
+      Но все сошлись во мнении, что артефакт может быть один из: {objects}.
+      Где изготовлен {answer_subject}?"
+    subjects: [ Древний клинок ]
+    verb: " "
+    objects: [ греческий, финикийский, египетский, парфянский ]
+    askAbout: OBJECT
+    sentencesNum: 2
+    statementsInSentence: 2
+    verityAllocation: [ [ true, false ], [ true, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_ALL
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "simple miniquest, nStatementsInSentence: #6"
+    intro: "Ученики нашли в земле {subjects}.
+      Рассматривая удивительную находку, каждый высказал по два предположения:<br>{statements}<br>
+      Учитель истории сказал ребятам, что каждый из них прав только в одном из двух предположений.
+      Но все сошлись во мнении, что артефакт может быть один из: {objects}.
+      Где изготовлен {answer_subject}?"
+    subjects: [ Cтаринный сосуд ]
+    verb: " "
+    objects: [ греческий, финикийский, египетский, парфянский ]
+    askAbout: OBJECT
+    sentencesNum: 3
+    statementsInSentence: 2
+    verityAllocation: [ [ true, false ], [ true, false ], [ true, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_ALL
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "simple miniquest, nStatementsInSentence: #7"
+    intro: "Ученики нашли в земле {subjects}.
+      Рассматривая удивительную находку, каждый высказал по два предположения:<br>{statements}<br>
+      Учитель истории сказал ребятам, что каждый из них прав только в одном из двух предположений.
+      Но все сошлись во мнении, что артефакт может быть один из: {objects}.
+      Где изготовлен {answer_subject}?"
+    subjects: [ Cтаринный сосуд ]
+    verb: " "
+    objects: [ греческий, финикийский, египетский, парфянский ]
+    askAbout: OBJECT
+    sentencesNum: 4
+    statementsInSentence: 2
+    verityAllocation: [ [ true, false ], [ true, false ], [ true, false ], [ true, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_ALL
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "simple miniquest, nStatementsInSentence: #8"
+    intro: "{subjects} и ее подруги интересуются различными видами искусств: {objects}.
+      Известно, что {subjects} увлекается только одним видом искусств.
+      Её знакомые дали следующие фразы:<br>{statements}<br>
+      Один из них (самый откровенный) оба раза говорил правду;
+      второй (самый скрытный) оба раза говорил неправду, третий (осторожный) один раз сказал правду, а другой раз – неправду.<br>
+      Чем увлекается {answer_subject}?"
+    subjects: [ Маша ]
+    verb: занимается
+    objects: [ балетом, пением, живописью ]
+    sentencesNum: 3
+    statementsInSentence: 2
+    verityAllocation: [ [ true, true ], [ true, false ], [ false, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_ALL
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "simple miniquest, nStatementsInSentence: #9"
+    intro: "{subjects} и ее подруги интересуются различными видами искусств: {objects}.
+      Известно, что {subjects} увлекается только одним видом искусств.
+      Её знакомые дали следующие фразы:<br>{statements}<br>
+      Один из них (самый откровенный) оба раза говорил правду;
+      второй (самый скрытный) оба раза говорил неправду, третий (осторожный) один раз сказал правду, а другой раз – неправду.<br>
+      Чем увлекается {answer_subject}?"
+    subjects: [ Маша ]
+    verb: занимается
+    objects: [ балетом, пением, живописью, скульптурой ]
+    sentencesNum: 3
+    statementsInSentence: 2
+    verityAllocation: [ [ true, true ], [ true, false ], [ false, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_ALL
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "simple miniquest, nStatementsInSentence: #10"
+    intro: "{subjects} и ее подруги интересуются различными видами искусств: {objects}.
+      Известно, что {subjects} увлекается только одним видом искусств.
+      Её знакомые дали следующие фразы:<br>{statements}<br>
+      Один из них (самый откровенный) оба раза говорил правду;
+      второй (самый скрытный) оба раза говорил неправду, третий (осторожный) один раз сказал правду, а другой раз – неправду.<br>
+      Чем увлекается {answer_subject}?"
+    subjects: [ Маша ]
+    verb: занимается
+    objects: [ балетом, пением, живописью, скульптурой, кино ]
+    sentencesNum: 3
+    statementsInSentence: 2
+    verityAllocation: [ [ true, true ], [ true, false ], [ false, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_ALL
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+
+  -
+    type: STANDARD
+    editorNote: "n subjects, nStatementsInSentence, simple: #1"
+    intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
+      При этом каждая увлекается ровно одним видом искусств.
+      Их знакомые дали следующие фразы:<br>{statements}<br>
+      Причём один сказал все истинные утверждения, а другой - все ложные.      
+      Чем увлекается {answer_subject}?"
+    subjects: [ Маша, Аня ]
+    verb: занимается
+    objects: [ балетом, пением, живописью ]
+    sentencesNum: 2
+    statementsInSentence: 2
+    verityAllocation: [ [ true, true ], [ false, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_ALL
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "n subjects, nStatementsInSentence, simple: #2"
+    intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
+      При этом каждая увлекается ровно одним видом искусств.
+      Их знакомые дали следующие фразы:<br>{statements}<br>
+      Причём один сказал все истинные утверждения, а другой - все ложные.      
+      Чем увлекается {answer_subject}?"
+    subjects: [ Маша, Аня, Вика ]
+    verb: занимается
+    objects: [ балетом, пением, живописью ]
+    sentencesNum: 2
+    statementsInSentence: 2
+    verityAllocation: [ [ true, true ], [ false, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_ALL
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "n subjects, nStatementsInSentence, simple: #3"
+    intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
+      При этом каждая увлекается ровно одним видом искусств.
+      Их знакомые дали следующие фразы:<br>{statements}<br>
+      Причём двое сказали все истинные утверждения, а другой - все ложные.      
+      Чем увлекается {answer_subject}?"
+    subjects: [ Маша, Аня ]
+    verb: занимается
+    objects: [ балетом, пением, живописью, скульптурой ]
+    sentencesNum: 3
+    statementsInSentence: 2
+    verityAllocation: [ [ true, true ], [ true, true ], [ false, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_ALL
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "n subjects, nStatementsInSentence, simple: #4"
+    intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
+      При этом каждая увлекается ровно одним видом искусств.
+      Их знакомые дали следующие фразы:<br>{statements}<br>
+      Причём каждый из них высказал одно истинное и одно ложное утверждение.
+      Чем увлекается {answer_subject}?"
+    subjects: [ Маша, Аня ]
+    verb: занимается
+    objects: [ балетом, пением, живописью ]
+    sentencesNum: 2
+    statementsInSentence: 2
+    verityAllocation: [ [ true, false ], [ true, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_MENTIONED_IN_STATEMENTS
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "n subjects, nStatementsInSentence, simple: #5"
+    intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
+      При этом каждая увлекается ровно одним видом искусств.
+      Их знакомые дали следующие фразы:<br>{statements}<br>
+      Причём каждый из них высказал одно истинное и одно ложное утверждение.
+      Чем увлекается {answer_subject}?"
+    subjects: [ Маша, Аня, Света ]
+    verb: занимается
+    objects: [ балетом, пением, живописью, кино ]
+    sentencesNum: 2
+    statementsInSentence: 2
+    verityAllocation: [ [ true, false ], [ true, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_MENTIONED_IN_STATEMENTS
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "n subjects, nStatementsInSentence, simple: #6"
+    intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
+      При этом каждая увлекается ровно одним видом искусств.
+      Их знакомые дали следующие фразы:<br>{statements}<br>
+      Причём каждый из них высказал одно истинное и одно ложное утверждение.
+      Чем увлекается {answer_subject}?"
+    subjects: [ Маша, Аня, Света ]
+    verb: занимается
+    objects: [ балетом, пением, живописью, кино ]
+    sentencesNum: 3
+    statementsInSentence: 2
+    verityAllocation: [ [ true, false ], [ true, false ], [ true, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_MENTIONED_IN_STATEMENTS
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "n subjects, nStatementsInSentence, simple: #7"
+    intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
+      При этом каждая увлекается ровно одним видом искусств.
+      Их знакомые дали следующие фразы:<br>{statements}<br>
+      Причём каждый из них высказал одно истинное и одно ложное утверждение.
+      Чем увлекается {answer_subject}?"
+    subjects: [ Маша, Аня ]
+    verb: занимается
+    objects: [ балетом, пением, живописью ]
+    sentencesNum: 4
+    statementsInSentence: 2
+    verityAllocation: [ [ true, false ], [ true, false ], [ true, false ], [ true, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_MENTIONED_IN_STATEMENTS
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "n subjects, nStatementsInSentence, simple: #8"
+    intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
+      При этом каждая увлекается ровно одним видом искусств.
+      Их знакомые дали следующие фразы:<br>{statements}<br>
+      Один из них (самый откровенный) оба раза говорил правду;
+      второй (самый скрытный) оба раза говорил неправду, третий (осторожный) один раз сказал правду, а другой раз – неправду.<br>
+      Чем увлекается {answer_subject}?"
+    subjects: [ Маша, Аня ]
+    verb: занимается
+    objects: [ балетом, пением ]
+    sentencesNum: 3
+    statementsInSentence: 2
+    verityAllocation: [ [ true, true ], [ true, false ], [ false, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_MENTIONED_IN_STATEMENTS
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "n subjects, nStatementsInSentence, simple: #9"
+    intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
+      При этом каждая увлекается ровно одним видом искусств.
+      Их знакомые дали следующие фразы:<br>{statements}<br>
+      Один из них (самый откровенный) оба раза говорил правду;
+      второй (самый скрытный) оба раза говорил неправду, третий (осторожный) один раз сказал правду, а другой раз – неправду.<br>
+      Чем увлекается {answer_subject}?"
+    subjects: [ Маша, Аня ]
+    verb: занимается
+    objects: [ балетом, пением, живописью ]
+    sentencesNum: 3
+    statementsInSentence: 2
+    verityAllocation: [ [ true, true ], [ true, false ], [ false, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_MENTIONED_IN_STATEMENTS
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "n subjects, nStatementsInSentence, simple: #10"
+    intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
+      При этом каждая увлекается ровно одним видом искусств.
+      Их знакомые дали следующие фразы:<br>{statements}<br>
+      Один из них (самый откровенный) оба раза говорил правду;
+      второй (самый скрытный) оба раза говорил неправду, третий (осторожный) один раз сказал правду, а другой раз – неправду.<br>
+      Чем увлекается {answer_subject}?"
+    subjects: [ Маша, Аня, Даша ]
+    verb: занимается
+    objects: [ балетом, пением, живописью ]
+    sentencesNum: 3
+    statementsInSentence: 2
+    verityAllocation: [ [ true, true ], [ true, false ], [ false, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 0
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_MENTIONED_IN_STATEMENTS
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+
+
+  # === Medium missions ===
+  -
+    type: STANDARD
+    editorNote: "table-1 quest, medium: #1"
+    intro: "{subjects} изучают различные иностранные языки: {objects}.
+      Известно, что:<br>{statements}<br>
+      Кто изучает {answer_object}?"
+    subjects: [ Вадим, Сергей, Михаил, Петр ]
+    verb: изучает
+    objects: [ китайский, японский, арабский, испанский ]
+    askAbout: SUBJECT
+    table: true
+    minAnswerInfers: 3
+    maxAnswerInfers: 3
+  -
+    type: STANDARD
+    editorNote: "table-1 quest, medium: #2; some info may stay unknown"
+    intro: "{subjects} изучают различные иностранные языки: {objects}.
+      Известно, что:<br>{statements}<br>
+      Кто изучает {answer_object}?"
+    subjects: [ Вадим, Сергей, Михаил, Петр, Олег ]
+    verb: изучает
+    objects: [ китайский, японский, арабский, испанский, французский ]
+    askAbout: SUBJECT
+    table: true
+    minAnswerInfers: 2
+    maxAnswerInfers: 2
+  -
+    type: STANDARD
+    editorNote: "table-1 quest, medium: #3"
+    intro: "{subjects} изучают различные иностранные языки: {objects}.
+      Известно, что:<br>{statements}<br>
+      Кто изучает {answer_object}?"
+    subjects: [ Вадим, Сергей, Михаил, Петр, Олег ]
+    verb: изучает
+    objects: [ китайский, японский, арабский, испанский, французский, чешский ]
+    askAbout: SUBJECT
+    table: true
+    minAnswerInfers: 3
+    maxAnswerInfers: 3
+
+  -
+    type: TABLE_2
+    editorNote: "table-2 quest: #1, edu"
+    intro: "Дочери писательницы Дорис Кей: {subjects} тоже очень талантливы.
+      Они приобрели известность в разных видах искусств: {objects-1}.
+      Все они живут в разных городах: {objects-0}.
+      Известно, что:<br>{statements}<br>
+      Кто стала известной в {answer_object}?"
+    subjects: [ Джуди, Айрис, Линда ]
+    verbMany:
+      - живёт в
+      - приобрела известность в
+    objectsMany:
+      - [ Париже, Риме, Чикаго ]
+      - [ пении, балете, кино ]
+    demonstrativePronoun: Та
+  -
+    type: TABLE_2
+    editorNote: "table-2 quest: #2"
+    intro: "Дочери писательницы Дорис Кей: {subjects} тоже очень талантливы.
+      Они приобрели известность в разных видах искусств: {objects-1}.
+      Все они живут в разных городах: {objects-0}.
+      Известно, что:<br>{statements}<br>
+      Кто стала известной в {answer_object}?"
+    subjects: [ Джуди, Айрис, Линда ]
+    verbMany:
+      - живёт в
+      - приобрела известность в
+    objectsMany:
+      - [ Париже, Риме, Чикаго ]
+      - [ пении, балете, кино ]
+    demonstrativePronoun: Та
+  -
+    type: TABLE_2
+    editorNote: "table-2 quest: #3"
+    intro: "Дочери писательницы Дорис Кей: {subjects} тоже очень талантливы.
+      Они приобрели известность в разных видах искусств: {objects-1}.
+      Все они живут в разных городах: {objects-0}.
+      Известно, что:<br>{statements}<br>
+      Кто стала известной в {answer_object}?"
+    subjects: [ Джуди, Айрис, Линда ]
+    verbMany:
+      - живёт в
+      - приобрела известность в
+    objectsMany:
+      - [ Париже, Риме, Чикаго ]
+      - [ пении, балете, кино ]
+    demonstrativePronoun: Та
+
+
+  -
+    type: STANDARD
+    editorNote: "simple miniquest, nStatementsInSentence: #1"
+    intro: "{subjects} и ее подруги интересуются различными видами искусств: {objects}.
+      Известно, что {subjects} увлекается только одним видом искусств.
+      Её знакомые дали следующие фразы:<br>{statements}<br>
+      Причём 2 из них сказали все истинные утверждения, а другой - все ложные.
+      Во что играет {answer_subject}?"
+    subjects: [ Маша ]
+    verb: занимается
+    objects: [ балетом, пением, живописью, скульптурой ]
+    sentencesNum: 3
+    statementsInSentence: 2
+    verityAllocation: [ [ true, true ], [ true, true ], [ false, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 99
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_ALL
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "simple miniquest, nStatementsInSentence: #2"
+    intro: "{subjects} и ее подруги интересуются различными видами искусств: {objects}.
+      Известно, что {subjects} увлекается только одним видом искусств.
+      Её знакомые дали следующие фразы:<br>{statements}<br>
+      Причём 3 из них сказали все истинные утверждения, а другой - все ложные.
+      Во что играет {answer_subject}?"
+    subjects: [ Маша ]
+    verb: занимается
+    objects: [ балетом, пением, живописью, скульптурой ]
+    sentencesNum: 4
+    statementsInSentence: 2
+    verityAllocation: [ [ true, true ], [ true, true ], [ true, true ], [ false, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 99
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_ALL
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+
+
+  - type: STANDARD
+    editorNote: "test nStatementsInSentence"
+    intro: "Министры иностранных дел {objects} обсудили за закрытыми дверями проекты соглашения, представленные каждой из стран.
+      Отвечая затем на вопрос журналистов: \"Чей именно проект был принят?\", министры дали такие ответы:<br><br>
+      {statements}<br>
+      
+      Один из них (самый откровенный) оба раза говорил правду; второй (самый скрытный) оба раза говорил неправду, третий (осторожный) один раз сказал правду, а другой раз — неправду.
+      Определите, чей проект выбрали?"
+    subjects: [ Проект ]
+    verb: " "
+    objects: [ Англии, Франции, Китая ]
+    sentencesNum: 3
+    statementsInSentence: 2
+    verityAllocation: [ [ true, true ], [ true, false ], [ false, false ] ]
+    minAnswerInfers: 0
+    maxAnswerInfers: 99
+    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_ALL
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "test nStatementsInSentence"
+    intro: "3 подруги — {subjects} — участвовали в различных соревнованиях: {objects}.<br>
+      Отвечая затем на вопросы журналистов, девушки дали такие ответы:<br><br>
+      {statements}<br>
+      
+      Одна из них (самая откровенная) оба раза сказала правду; вторая (самая скрытная) оба раза сказала неправду, третья (осторожная) один раз сказала правду, а другой раз — неправду.<br>
+      В каком виде спорта принимала участие {answer_subject}?"
+    subjects: [ Маша, Полина, Ольга ]
+    verb: участвовала в
+    objects: [ беге, плавании, ходьбе ]
+    sentencesNum: 3
+    statementsInSentence: 2
+    verityAllocation: [[true, true], [true, false], [false, false]]
+    minAnswerInfers: 0
+    maxAnswerInfers: 99
+    repeatsLimit: -1
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "test nStatementsInSentence"
+    intro: "Четыре подруги — {subjects} — участвовали в различных соревнованиях: {objects}.<br>
+      Отвечая затем на вопросы журналистов, девушки дали такие ответы:<br><br>
+      {statements}<br>
+      
+      Одна из них (самая откровенная) оба раза сказала правду; вторая (самая скрытная) оба раза сказала неправду, третья (осторожная) один раз сказала правду, а другой раз — неправду.<br>
+      В каком виде спорта принимала участие {answer_subject}?"
+    subjects: [ Маша, Полина, Ольга, Наташа ]
+    verb: участвовала в
+    objects: [ беге, плавании, ходьбе, теннисе ]
+    sentencesNum: 3
+    statementsInSentence: 2
+    verityAllocation: [[true, true], [true, false], [false, false]]
+    minAnswerInfers: 0
+    maxAnswerInfers: 99
+    repeatsLimit: 3
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+  -
+    type: STANDARD
+    editorNote: "test nStatementsInSentence"
+    intro: "Четыре подруги — {subjects} — участвовали в различных соревнованиях: {objects}.<br>
+      Установите, в каком виде спорта участвовала каждая из девушек, если известно, что в каждом из приведенных ниже ответов,
+       которые дали девушки опоздавшему к финишу корреспонденту, верной является лишь половина.<br><br>
+      {statements}<br>
+      
+      В каком виде спорта принимала участие {answer_subject}?"
+    subjects: [ Маша, Полина, Ольга, Наташа ]
+    verb: участвовала в
+    objects: [ беге, плавании, ходьбе, теннисе ]
+    sentencesNum: 3
+    statementsInSentence: 2
+    verityAllocation: [[true, false], [true, false], [true, false]]
+    minAnswerInfers: 3
+    repeatsLimit: 3
+    contradictionsEnabled: true
+    rightAnswersNum: 1
+
+
+
+
+# === Hard missions ===
+
+
+

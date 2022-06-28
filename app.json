@@ -1,0 +1,5 @@
+{
+  "name": "Logic-edu",
+  "description": "A prop Java app.",
+  "addons": [ "heroku-postgresql" ]
+}
