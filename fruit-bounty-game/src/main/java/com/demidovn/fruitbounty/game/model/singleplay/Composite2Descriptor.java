@@ -9,8 +9,8 @@ import java.util.List;
 public class Composite2Descriptor implements Serializable {
     private int version;
 
-    private final String editorNote;
-    private final String intro;
+    private String editorNote;
+    private String intro;
 
     // Standard
     private List<String> subjects;
@@ -21,11 +21,11 @@ public class Composite2Descriptor implements Serializable {
     private List<String> minusVerbNegative;
 
     private List<String> objects;
-    private final int statementsNumMin;
-    private final int statementsNumMax;
-    private final int repeatsLimit;
-    private final boolean contradictionsEnabled;
-    private final int answerOutOfStatementsChance;
+    private int statementsNumMin;
+    private int statementsNumMax;
+    private int repeatsLimit;
+    private boolean contradictionsEnabled;
+    private int answerOutOfStatementsChance;
 
     // Single-2
     private List<String> hooksVerbs;

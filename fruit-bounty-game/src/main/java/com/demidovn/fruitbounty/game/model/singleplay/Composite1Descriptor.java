@@ -10,8 +10,8 @@ import java.util.List;
 public class Composite1Descriptor implements VerbDescriptor, Serializable {
     private int version;
 
-    private final String editorNote;
-    private final String intro;
+    private String editorNote;
+    private String intro;
 
     // Standard
     private List<String> subjects;
@@ -19,8 +19,8 @@ public class Composite1Descriptor implements VerbDescriptor, Serializable {
     private String verbPositive;
     private String verbNegative;
     private List<String> objects;
-    private final int sentencesNumMin;
-    private final int sentencesNumMax;
-    private final int repeatsLimit;
+    private int sentencesNumMin;
+    private int sentencesNumMax;
+    private int repeatsLimit;
 
 }
