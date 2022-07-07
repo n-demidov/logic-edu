@@ -2,6 +2,7 @@
 
 var TIMER_INTERVAL = 90;
 var NEXT_QUEST_IDLE = 5000;
+var OUTPUT_AFTER_HINT_SCROLL = 143;
 
 var imgGameScreen = new Image();
 var fruitsImage = new Image();
@@ -80,7 +81,7 @@ function resetGameInfo() {
 
 function resetGameRequestUi() {
   isWaitingForOpponent = false;
-  $("#play-mission").text(localize("play"));
+  updatePlayButtonText();
   $("#play-loader").hide();
   stopDisplayTips();
 }
@@ -257,6 +258,12 @@ function nextPage() {
   }
 }
 
+function hintBtn() {
+  setTimeout(function() {
+    $('#output').scrollTop($('#output').scrollTop() + OUTPUT_AFTER_HINT_SCROLL);
+  }, 100);
+}
+
 function onNextQuest() {
   if (game === undefined) {
     return;
@@ -373,7 +380,16 @@ function paintWinner(game) {
     addedScore = "+" + addedScore;
   }
   var text = localize('score') + ": " + addedScore;
-  $('#subwindow-points').text(text);
+
+  // Player level
+  if (addedScore > 0 && game.questType === "MISSION") {
+    text += "<br> Уровень: +1";  //todo: not hardcode
+    $('#subwindow-points').css("top", "76%");
+  } else {
+    $('#subwindow-points').css("top", "74%");
+  }
+
+  $('#subwindow-points').html(text);
 
   // Set player images
   $('#subwindow-left-pl-img').attr('src', $('#left-pl-img').attr('src'));

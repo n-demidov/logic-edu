@@ -47,7 +47,7 @@ public class MissionsService {
             missionDescriptorValidator.validBaseFields(missionDescriptor);
             missionDescriptorValidator.validVerbsFilling(missionDescriptor);
 
-            int missionNumber = i;
+            int missionNumber = i + 1;
             missionDescriptor.setMissionNumber(missionNumber);
 
             missionDescriptor.setVerbPositive(questVerbsFormatter.getPositiveVerb(missionDescriptor));

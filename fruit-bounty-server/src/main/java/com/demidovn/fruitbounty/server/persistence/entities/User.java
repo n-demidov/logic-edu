@@ -66,6 +66,7 @@ public class User {
 
   @PrePersist
   private void onCreate() {
+    mission = 1;
     created = Instant.now().toEpochMilli();
     lastLogin = created;
   }

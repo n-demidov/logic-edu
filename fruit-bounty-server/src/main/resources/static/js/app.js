@@ -250,6 +250,8 @@ function processUserInfoOperation(data) {
   $("#userScore").text(localize('level') + ': ' + userInfo.mission);
   $("#user-info-data").attr("data-original-title", concatGameStats(userInfo));
 
+  updatePlayButtonText();
+
   showMainWindow();
 }
 
@@ -369,6 +371,11 @@ function initUi() {
   });
 
   $('[data-toggle="tooltip"]').tooltip();
+}
+
+function updatePlayButtonText() {
+  var playNextLevelText = localize("play-next-level").replace("{level}", userInfo.mission);
+  $("#play-mission").text(playNextLevelText);
 }
 
 function preloadFirstImages() {

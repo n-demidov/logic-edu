@@ -23,10 +23,9 @@ function getLocalization() {
       en: "Rating",
       ru: "Рейтинг"
     },
-    "play": {
-      selector: "#play-mission",
-      en: "Play mission",
-      ru: "Играть миссию"
+    "play-next-level": {
+      en: "Play #{level} level",
+      ru: "Играть уровень {level}"
     },
     "play-single-game-2": {
       selector: "#playSingleGame2",
