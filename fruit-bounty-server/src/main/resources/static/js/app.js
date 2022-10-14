@@ -126,7 +126,7 @@ function sendPlayRequest(playGameType) {
     };
 
     isWaitingForOpponent = true;
-    $("#play-mission").text(localize("matching-players"));
+    $("#play-mission-caption").text(localize("matching-players"));
     $("#play-loader").show();
     startDisplayTips();
   }
@@ -200,6 +200,10 @@ function isFirstGame() {
   return userInfo.wins === 0 && userInfo.defeats === 0 && userInfo.draws === 0;
 }
 
+function hideAllTooltips() {
+  $('[data-toggle="tooltip"]').tooltip('hide')
+}
+
 function connectToServer() {
   var socket = new SockJS(WEBSOCKET_ENTRY_URL);
   stompClient = Stomp.over(socket);
@@ -246,6 +250,7 @@ function processUserInfoOperation(data) {
   userInfo = data;
 
   $("#userImg").attr("src", userInfo.img);
+  $("#user-resume-rating-caption").text("Рейтинг: " + userInfo.score);
   $("#userName").text(userInfo.name);
   $("#userScore").text(localize('level') + ': ' + userInfo.mission);
   $("#user-info-data").attr("data-original-title", concatGameStats(userInfo));
@@ -283,6 +288,8 @@ function isNeedScrollChat() {
 }
 
 function processRatingTableOperation(topRated) {
+  hideAllTooltips();
+
   var topPlayers = $("#top-players-container");
   topPlayers.html("");
 
@@ -290,11 +297,10 @@ function processRatingTableOperation(topRated) {
   topRated.forEach(function(user) {
     counter++;
     var tooltipText = concatGameStats(user);
-    var tooltipAttrs = "data-toggle='tooltip' data-placement='bottom' title='" + tooltipText + "'";
-    var placeColor = getPlayerPlaceColor(counter);
+    var tooltipAttrs = "data-toggle='tooltip' data-placement='bottom' data-container='body' title='" + tooltipText + "'";
 
     topPlayers.append(
-      "<div class='top-player " + placeColor + "' " + tooltipAttrs + ">" +
+      "<div class='top-player' " + tooltipAttrs + ">" +
           wrapSpan(counter) +
           '<img class="rating-table-player-img" src="' + user.img + '">' +
           "<div class='top-player-info'>" +
@@ -311,18 +317,6 @@ function processRatingTableOperation(topRated) {
   });
 
   $('[data-toggle="tooltip"]').tooltip();
-}
-
-function getPlayerPlaceColor(counter) {
-  if (counter === 1) {
-    return "player-first-place";
-  } else if (counter === 2) {
-    return "player-second-place";
-  } else if (counter === 3) {
-    return "player-third-place";
-  } else {
-    return "";
-  }
 }
 
 function wrapSpan(text) {
@@ -342,6 +336,8 @@ function initUi() {
   });
   $("#reconnect").click(connectToServer);
   $("#play-mission").click(playMission);
+  $("#play-mission-caption").click(playMission);
+  $("#play-loader").click(playMission);
   $("#playBrief1Game").click(playBrief1Game);
   $("#playSingleGame1").click(playSingleplay1);
   $("#playSingleGame2").click(playSingleplay2);
@@ -375,24 +371,14 @@ function initUi() {
 
 function updatePlayButtonText() {
   var playNextLevelText = localize("play-next-level").replace("{level}", userInfo.mission);
-  $("#play-mission").text(playNextLevelText);
+  $("#play-mission-caption").text(playNextLevelText);
 }
 
 function preloadFirstImages() {
   imgLobbyScreen.src = '../img/components/lobby_background.png';
 
-  var imgTopPlayer = new Image();
-  var imgTopPlayerGold = new Image();
-  var imgTopPlayerBronze = new Image();
-  var imgTopPlayerSilver = new Image();
   var imgUserInfo = new Image();
-  var imgRatingLabel = new Image();
-  imgTopPlayer.src = '../img/components/top_player.png';
-  imgTopPlayerGold.src = '../img/components/top_player_gold.png';
-  imgTopPlayerSilver.src = '../img/components/top_player_silver.png';
-  imgTopPlayerBronze.src = '../img/components/top_player_bronze.png';
   imgUserInfo.src = '../img/components/user_info.png';
-  imgRatingLabel.src = '../img/components/rating_label.png';
 }
 
 function setConnected(connected) {
@@ -501,6 +487,17 @@ function storeUuid() {
   }
 }
 
+/* === Adds === */
+async function showAdds() {
+  if (getState() === VK_TYPE) {
+    window.vkBridge.send("VKWebAppCheckNativeAds", {"ad_format": "interstitial"});
+
+    window.vkBridge.send("VKWebAppShowNativeAds", {ad_format:"interstitial"})
+        .then(data => console.log(data.result))
+        .catch(error => console.log(error));
+  }
+}
+
 
 /* === Facebook Methods === */
 function startFbSdk() {
@@ -585,6 +582,14 @@ function startVkSdk() {
     console.log('loading vk SDK...');
     loadScript(VK_SDK_URL, initVk);
   }
+
+  console.log('loading vk bridge...');
+  window.vkBridge.send('VKWebAppInit');
+
+  // // Sends event to client
+  // window.bridge.send('VKWebAppInit');
+  // // Subscribes to event, sended by client
+  // window.bridge.subscribe(e => console.log(e));
 }
 
 function initVk() {

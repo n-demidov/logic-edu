@@ -66,7 +66,7 @@ public class MissionGameCreator {
     final String questAnswer;
     final List<String> answerOptions;
     if (missionsDesc.getType() == MissionType.EDU) {
-      intro += "<br><br><p><button id='hintBtn' onmouseup='hintBtn()' class=\"btn btn-primary\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapseExample\" aria-expanded=\"false\" aria-controls=\"collapseExample\">Порассуждать</button></p><div class=\"collapse\" id=\"collapseExample\"><div id=\"solution-text\" class=\"card card-body\">{solution-text}</div></div>";
+      intro += "<br><br><p><button id='hintBtn' onmouseup='hintBtn()' class=\"btn btn-primary\" type=\"button\" data-toggle=\"collapse\" data-target='#collapseExample' data-container='body' aria-expanded=\"false\" aria-controls=\"collapseExample\">Порассуждать</button></p><div class=\"collapse\" id=\"collapseExample\"><div id=\"solution-text\" class='card card-body background-colored'>{solution-text}</div></div>";
       intro = intro.replace("{solution-text}", missionsDesc.getSolution());
 
       intro = intro.replace("{subjects}", "<b>" + stringFormatter.joinList(missionsDesc.getSubjects()) + "</b>");

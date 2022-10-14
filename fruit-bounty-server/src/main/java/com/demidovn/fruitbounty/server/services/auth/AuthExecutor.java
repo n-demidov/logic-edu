@@ -152,7 +152,7 @@ public class AuthExecutor implements Runnable {
       userInfo.setImg(UNKNOWN_PERSON_IMG);
     }
     if (userInfo.getPublicName() == null) {
-      userInfo.setPublicName("test001");
+      userInfo.setPublicName("Незнакомец " + new StringBuilder(String.valueOf(System.currentTimeMillis())).reverse());
 //      userInfo.setPublicName(nameGenerator.getRandomName());
     }
   }

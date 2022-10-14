@@ -6,10 +6,8 @@
 
   <title>Logic Edu</title>
 
-  <link rel="stylesheet" type="text/css" href="/style/external/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/style/style.css">
-  <link rel="preload" href="/fonts/Showcard_Gothic_Regular.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/fonts/Showcard_Gothic_Cyr.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" type="text/css" href="/style/external/bootstrap.min.css?v=2">
+  <link rel="stylesheet" type="text/css" href="/style/style.css?v=2">
 </head>
 <body>
 <noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled. Please enable Javascript and reload this page!</h2></noscript>
@@ -20,18 +18,26 @@
 
   <div class="background-container">
     <div class="background">
+      <img class="background-img" src="/img/components/lobby_background.png"></img>
+
       <!-- Lobby window -->
       <div id="lobby-window" class="lobby-window background-left">
 
-        <div>
-          <img class="main-user-info-container-img" src="/img/components/user_info.png">
-        </div>
+        <div class="lobby-caption">РЕЗЮМЕ</div>
+
+        <img class="main-user-info-container-img" src="/img/components/user_info.png">
 
         <!-- User Info -->
         <div class="main-user-info margin-left lobby-data-margin-bottom">
-          <div class="user-info padding-4">
-            <img id="userImg" class="player-img img-rounded" src="#">
-            <div id="user-info-data" class="user-info-data info-margin-left" data-toggle="tooltip" data-placement="bottom" title="">
+          <div class="user-info">
+
+            <div>
+              <img class="user-resume-rating-img" src="/img/components/player_info_rating.png">
+              <div id="user-resume-rating-caption" class="user-resume-rating-caption"></div>
+            </div>
+
+            <img id="userImg" class="personal-resume-img" src="#">
+            <div id="user-info-data" class="user-info-data" data-toggle="tooltip" data-placement="bottom" data-container="body" title="">
               <div class="user-info-name">
                 <span id="userName"></span>
               </div>
@@ -55,25 +61,27 @@
         </div>
 
         <!-- Play button -->
-        <div class="play-content">
+        <div>
+          <img id="play-mission" class="btn-play" src="/img/components/play_button.png">
           <div>
-            <button id="play-mission" type="button" class="btn-play btn btn-default btn-primary"></button>
+            <div id="play-mission-caption" class="play-mission-caption"></div>
             <img id="play-loader" class="play-loader" src="https://thumbs.gfycat.com/EmptyDeliriousBluefish-size_restricted.gif" alt="Smiley face">
           </div>
-
-<!--          <div>-->
-<!--            <button id="playBrief1Game" type="button" class="btn-play btn btn-default btn-primary">Короткая игра 1</button>-->
-<!--          </div>-->
-
-<!--          <div>-->
-<!--            <button id="playSingleGame1" type="button" class="btn-play btn btn-default btn-primary">Одиночная игра 1</button>-->
-<!--          </div>-->
-
-<!--          <div>-->
-<!--            <button id="playSingleGame2" type="button" class="btn-play btn btn-default btn-primary"></button>-->
-<!--          </div>-->
         </div>
+
       </div>
+
+      <!--          <div>-->
+      <!--            <button id="playBrief1Game" type="button" class="btn-play btn btn-default btn-primary">Короткая игра 1</button>-->
+      <!--          </div>-->
+
+      <!--          <div>-->
+      <!--            <button id="playSingleGame1" type="button" class="btn-play btn btn-default btn-primary">Одиночная игра 1</button>-->
+      <!--          </div>-->
+
+      <!--          <div>-->
+      <!--            <button id="playSingleGame2" type="button" class="btn-play btn btn-default btn-primary"></button>-->
+      <!--          </div>-->
 
       <!-- Game window -->
       <div id="game-window" class="game-window background-left">
@@ -110,13 +118,13 @@
           </button>
 
           <!-- Give an answer -->
-          <div class="btn-group">
+          <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span>Дать ответ</span>
               <span class="caret"></span>
             </button>
 
-            <ul id="answers" class="dropdown-menu">
+            <ul id="answers" class="dropdown-menu background-colored">
               <!-- Dynamic content here -->
             </ul>
           </div>
@@ -159,17 +167,13 @@
         <!-- Game sub-window -->
         <div id="subwindow-background" class="subwindow-background">
           <div id="subwindow-container" class="subwindow-container">
+            <div id="subwindow-title" class="subwindow-title"></div>
             <div id="subwindow-close" class="subwindow-close"></div>
-            <div id="subwindow-cells" class="subwindow-cells"></div>
-
-            <img id="subwindow-left-pl-img" class="subwindow-pl-img subwindow-left-pl-img" src="#">
-            <img id="subwindow-right-pl-img" class="subwindow-pl-img subwindow-right-pl-img" src="#">
-
-            <div id="subwindow-left-pl-name" class="subwindow-pl-name subwindow-left-pl-name"></div>
-            <div id="subwindow-right-pl-name" class="subwindow-pl-name subwindow-right-pl-name"></div>
 
             <div id="subwindow-points" class="subwindow-points"></div>
-            <div id="subwindow-btn-next" class="subwindow-btn-next"></div>
+            <div id="subwindow-btn-next" class="subwindow-btn-next">
+              <div class="subwindow-btn-next-caption">ОК</div>
+            </div>
           </div>
         </div>
 
@@ -191,7 +195,7 @@
         <div class="chat-window bottom-panel-pane">
           <div class="">
             <div id="chat-output-scrolling" class="chat-output-scrolling background-colored rounded-borders">
-              <table id="conversation" class="table table-condensed no-margin-bottom">
+              <table id="conversation" class="table table-sm table-condensed no-margin-bottom">
                 <tbody id="greetings">
                 </tbody>
               </table>
@@ -201,8 +205,8 @@
             <form class="form-inline">
               <div class="form-group">
                 <div class="input-group">
-                  <input type="text" id="chat-msg-input" class="form-control chat-msg-input" maxlength="200" autocomplete="off">
-                  <div id="send" class="btn btn-default input-group-addon">
+                  <input type="text" id="chat-msg-input" class="form-control chat-msg-input background-colored" maxlength="200" autocomplete="off">
+                  <div id="send" class="chat-msg-input-icon btn btn-default input-group-addon">
                     &gt;
                   </div>
                 </div>
@@ -225,26 +229,26 @@
         <div class="feedback-window bottom-panel-pane">
           <textarea id="feedbackText" class="feedback-area background-colored rounded-borders" name="Text1" cols="40" rows="5"
                     placeholder="Здесь Вы можете сообщить об ошибке или поделиться идеями. Текущая игра прикрепится к вашему сообщению автоматически. Если отзыв не по текущей игре, - пожалуйста, укажите это в комментарии."></textarea>
-          <button id="sendFeedback" type="button" class="btn btn-sm btn-default">Отправить отзыв</button>
+          <button id="sendFeedback" type="button" class="btn btn-sm btn-primary">Отправить отзыв</button>
         </div>
 
       </div>
 
       <!-- Buttons -->
       <div class="bottom-panel-buttons background-left btn-group btn-group-sm" role="group">
-        <button id="turnChat" type="button" class="btn btn-default">Чат</button>
-        <button id="turnProgress" type="button" class="btn btn-default">Статус</button>
-        <button id="turnNotepad" type="button" class="btn btn-default">Блокнот</button>
-        <button id="turnFeedback" type="button" class="btn btn-default">Отзыв</button>
+        <button id="turnChat" type="button" class="btn btn-default bottom-panel-button">Чат</button>
+        <button id="turnProgress" type="button" class="btn btn-default bottom-panel-button">Статус</button>
+        <button id="turnNotepad" type="button" class="btn btn-default bottom-panel-button">Блокнот</button>
+        <button id="turnFeedback" type="button" class="btn btn-default bottom-panel-button">Отзыв</button>
       </div>
 
       <!-- Docs -->
       <div class="docs-content">
-        <a id="privacy-policy" target="_blank" href="/docs/privacy-policy.html">Privacy Policy</a>
+        <a id="privacy-policy" class="docs-content-ref" target="_blank" href="/docs/privacy-policy.html">Privacy Policy</a>
         <span class="blue-color"> </span>
-        <a id="terms-of-service" target="_blank" href="/docs/terms-of-service.html">Terms of Service</a>
+        <a id="terms-of-service" class="docs-content-ref" target="_blank" href="/docs/terms-of-service.html">Terms of Service</a>
         <span class="blue-color"> </span>
-        <a id="authors" target="_blank" href="/docs/authors.html">Authors & Feedback</a>
+        <a id="authors" class="docs-content-ref" target="_blank" href="/docs/authors.html">Authors & Feedback</a>
       </div>
 
     </div>
@@ -266,10 +270,14 @@
   </div>
 </div>
 
+<script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+
+<script defer src="/js/external/jquery-3.2.1.slim.min.js?v=2"></script>
+<script defer src="/js/external/popper.min.js"></script>
+<script defer src="/js/external/bootstrap.min.js?v=2"></script>
+
 <script defer src="/js/external/sockjs-1.1.2.min.js"></script>
 <script defer src="/js/external/stomp-2.3.4.min.js"></script>
-<script defer src="/js/external/jquery-3.2.1.slim.min.js"></script>
-<script defer src="/js/external/bootstrap.min.js"></script>
 <script defer src="/js/external/l100n.js"></script>
 
 <script defer src="/localization/tips.js"></script>
@@ -277,7 +285,7 @@
 <script defer src="/localization/main-ui.js"></script>
 <script defer src="/js/l10n-wrapper.js"></script>
 <script defer src="/js/screen-params.js"></script>
-<script defer src="/js/game.js"></script>
-<script defer src="/js/app.js"></script>
+<script defer src="/js/game.js?v=2"></script>
+<script defer src="/js/app.js?v=2"></script>
 </body>
 </html>

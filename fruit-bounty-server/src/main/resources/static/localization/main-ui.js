@@ -24,8 +24,8 @@ function getLocalization() {
       ru: "Рейтинг"
     },
     "play-next-level": {
-      en: "Play #{level} level",
-      ru: "Играть уровень {level}"
+      en: "ИГРАТЬ уровень {level}",
+      ru: "ИГРАТЬ уровень {level}"
     },
     "play-single-game-2": {
       selector: "#playSingleGame2",
@@ -123,6 +123,14 @@ function getLocalization() {
     "defeat": {
       en: "Defeat",
       ru: "Поражение"
+    },
+    "win_caps": {
+      en: "Win",
+      ru: "ПОБЕДА"
+    },
+    "defeat_caps": {
+      en: "Defeat",
+      ru: "ПОРАЖЕНИЕ"
     },
     "fruitIsOccupied": {
       en: "Fruit is occupied by opponent",

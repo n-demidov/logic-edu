@@ -5,14 +5,10 @@ var NEXT_QUEST_IDLE = 5000;
 var OUTPUT_AFTER_HINT_SCROLL = 143;
 
 var imgGameScreen = new Image();
-var fruitsImage = new Image();
-var handImage = new Image();
-var imgWarning = new Image();
 var imgDefeat = new Image();
 var imgVictory = new Image();
-var imgDraw = new Image();
 var imgBtnNext = new Image();
-var imgSurrender = new Image();
+var imgBtnClose = new Image();
 
 var timerId;
 var game;
@@ -43,12 +39,18 @@ function initGameUi() {
 }
 
 function processGameStartedOperation(newGame) {
+  if (userInfo.mission >= 3) {
+    showAdds();
+  }
+
   window.game = newGame;
-  $(".background").css("background-image", "url(" + imgGameScreen.src + ")");
+  $('.background-img').attr('src', imgGameScreen.src);
 
   resetGameInfo();
   resetGameRequestUi();
   switchToGameWindow();
+  $('#output').scrollTop(0);
+
   resetProps(newGame);
   setAnswerClicks(newGame);
   setHookClicks(newGame);
@@ -99,9 +101,9 @@ function setAnswerClicks(game) {
   $('#answers').html("");
   for (var i = 0; i < game.answerOptions.length; i++) {
     var answerOption = game.answerOptions[i];
-    $('#answers').append("<li><a class='answerOption' href='#' >" + answerOption + "</a></li>");
+    $('#answers').append("<a class='answerOption dropdown-item' href='#' >" + answerOption + "</a>");
     if (i < game.answerOptions.length - 1) {
-      $('#answers').append('<li role="separator" class="divider"></li>');
+      $('#answers').append('<div class="dropdown-divider"></div>');
     }
   }
 }
@@ -125,21 +127,15 @@ function setUi(game) {
 }
 
 function preloadGameSecondImages() {
-  fruitsImage.src = "../img/fruits.png";
-  handImage.src = "../img/hand.png";
   imgGameScreen.src = '../img/components/game-background.png';
-  imgWarning.src = '../img/components/window_warning.' + browserLocale + '.png';
   imgDefeat.src = '../img/components/window_defeat.' + browserLocale + '.png';
   imgVictory.src = '../img/components/window_victory.' + browserLocale + '.png';
-  imgDraw.src = '../img/components/window_draw.' + browserLocale + '.png';
   imgBtnNext.src = '../img/components/button_next.' + browserLocale + '.png';
-  imgSurrender.src = '../img/components/surrender.' + browserLocale + '.png';
+  imgBtnClose.src = '../img/components/close_btn.png';
 }
 
 function setImagesOnTags() {
-  $('#player-surrender-img').attr('src', imgSurrender.src);
   $('#subwindow-btn-next').css("background-image", "url(" + imgBtnNext.src + ")");
-  $('#warnwindow-container').css("background-image", "url(" + imgWarning.src + ")");
 }
 
 function processGameChangedOperation(newGame) {
@@ -171,7 +167,7 @@ function paintStatusTables(game) {
     '        </select>';
 
   for (var i = 0; i < game.tables.length; i++) {
-    v += "<table class='status-table table table-bordered table-condensed table-content-centered background-colored rounded-borders'>";
+    v += "<table class='status-table table table-bordered table-condensed table-sm table-content-centered background-colored rounded-borders'>";
     v += '<tr>';
     v += '<td></td>';
 
@@ -197,7 +193,7 @@ function paintStatusTables(game) {
 }
 
 function wrapStatusTd(td) {
-  return "<span class='status-td'>" + td + "</span>";
+  return "<span class='status-td background-colored'>" + td + "</span>";
 }
 
 function showConfirmWindow(yesFunction, noFunction, text) {
@@ -214,7 +210,8 @@ function hideConfirmWindow() {
 }
 
 function onSubwindowClose(e) {
-  $(".background").css("background-image", "url(" + imgLobbyScreen.src + ")");
+  $('.background-img').attr('src', imgLobbyScreen.src);
+
   $("#game-window").hide();
   $("#lobby-window").show();
   $('#helpTables').html("");
@@ -384,28 +381,23 @@ function paintWinner(game) {
   // Player level
   if (addedScore > 0 && game.questType === "MISSION") {
     text += "<br> Уровень: +1";  //todo: not hardcode
-    $('#subwindow-points').css("top", "76%");
+    $('#subwindow-points').css("top", "42%");
   } else {
-    $('#subwindow-points').css("top", "74%");
+    $('#subwindow-points').css("top", "38%");
   }
 
   $('#subwindow-points').html(text);
 
-  // Set player images
-  $('#subwindow-left-pl-img').attr('src', $('#left-pl-img').attr('src'));
-  $('#subwindow-right-pl-img').attr('src', $('#right-pl-img').attr('src'));
-
-  // Set player names
-  $('#subwindow-left-pl-name').text($('#left-pl-name').text());
-  $('#subwindow-right-pl-name').text($('#right-pl-name').text());
-
   // Set background image
   if (gameResult === "win") {
     $('#subwindow-container').css("background-image", "url(" + imgVictory.src + ")");
+    $('#subwindow-title').text(localize('win_caps'));
   } else if (gameResult === "defeat") {
     $('#subwindow-container').css("background-image", "url(" + imgDefeat.src + ")");
+    $('#subwindow-title').text(localize('defeat_caps'));
   } else {
-    $('#subwindow-container').css("background-image", "url(" + imgDraw.src + ")");
+    // $('#subwindow-container').css("background-image", "url(" + imgDraw.src + ")");
+    $('#subwindow-title').text('Error');
   }
 
   $('#subwindow-background').show();
