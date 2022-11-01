@@ -1,4 +1,4 @@
-package com.demidovn.fruitbounty.server.persistence.entities.feedback;
+package com.demidovn.fruitbounty.server.persistence.entities.chat;
 
 import com.demidovn.fruitbounty.server.persistence.converters.attributes.TimestampConverter;
 import com.vladmihalcea.hibernate.type.json.JsonType;
@@ -19,9 +19,9 @@ import java.time.Instant;
 
 @Data
 @Entity
-@Table(name = "feedback")
+@Table(name = "chat")
 @TypeDef(name = "json", typeClass = JsonType.class)
-public class Feedback {
+public class Chat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,8 +32,8 @@ public class Feedback {
     private long modifiedTimeMs;
 
     @Type(type = "json")
-    @Column(name = "feedback", columnDefinition = "json", nullable = true)
-    private FeedbackValues feedbackValues;
+    @Column(name = "chat", columnDefinition = "json", nullable = true)
+    private ChatValues chatValues;
 
     @PrePersist
     @PreUpdate
