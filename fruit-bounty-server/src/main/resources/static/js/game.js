@@ -39,7 +39,7 @@ function initGameUi() {
 }
 
 function processGameStartedOperation(newGame) {
-  if (userInfo.mission >= 3) {
+  if (userInfo.mission >= MIN_USER_LEVEL_FOR_ADDS) {
     showAdds();
   }
 
@@ -215,7 +215,12 @@ function onSubwindowClose(e) {
   $("#game-window").hide();
   $("#lobby-window").show();
   $('#helpTables').html("");
-  turnChat();
+
+  if (SHOW_FEEDBACK_FOR_LEVELS.includes(userInfo.mission)) {
+    turnFeedback();
+  } else {
+    turnChat();
+  }
 }
 
 function hideGameResultSubwindow(e) {
