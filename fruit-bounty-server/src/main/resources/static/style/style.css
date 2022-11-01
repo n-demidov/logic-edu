@@ -155,14 +155,15 @@ body{
 
   top: 18px;
   left: 14px;
-  width: 100px;
+  width: 108px;
+  height: 36px;
 }
 
 .user-resume-rating-caption{
   position: absolute;
   color: #FFFFFF;
 
-  top: 25px;
+  top: 26px;
   left: 25px;
 }
 
@@ -324,8 +325,9 @@ body{
 
 .top-player-place{
   position: absolute;
-  left: 23px;
-  top: 14px;
+
+  top: 12px;
+  right: 158px;
 }
 
 .rating-table-player-img{
