@@ -689,10 +689,16 @@ body{
   top: 532px;
 }
 
-.bottom-panel-button{
+.bottom-panel-button-unselected{
   background-color: #895B3A;
   color: #FFFBE9;
   border-color: #C7A578;
+}
+
+.bottom-panel-button-selected{
+  background-color: #FFFBE9;
+  color: #000000;
+  border-color: #949494;
 }
 
 /* ===== Chat ===== */

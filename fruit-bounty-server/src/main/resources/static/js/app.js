@@ -14,7 +14,7 @@ var C_KEY_CODE = 67;
 var TILDE_KEY_CODE = 192;
 
 var MIN_USER_LEVEL_FOR_ADDS = 3;
-var SHOW_FEEDBACK_FOR_LEVELS = [3, 10, 20, 40, 100];
+var SHOW_FEEDBACK_FOR_LEVELS = [4, 10, 20, 40, 100];
 
 var AUTH_OPERATION_TYPE = "Auth", FB_TYPE = "fb", VK_TYPE = "vk", YA_TYPE = "ya";
 var SEND_CHAT_OPERATION_TYPE = "SendChat";
@@ -93,22 +93,39 @@ function sendFeedback() {
   alert("Отзыв отправлен. Спасибо за обратную связь.");
 }
 
+function resetBottomPanelButtons() {
+  $(".bottom-panel-button").addClass('bottom-panel-button-unselected');
+  $(".bottom-panel-button").removeClass('bottom-panel-button-selected');
+}
+
 function turnChat() {
+  resetBottomPanelButtons();
+  $("#turnChat").addClass('bottom-panel-button-selected');
+
   $(".bottom-panel-pane").hide();
   $(".chat-window").show();
 }
 
 function turnNotepad() {
+  resetBottomPanelButtons();
+  $("#turnNotepad").addClass('bottom-panel-button-selected');
+
   $(".bottom-panel-pane").hide();
   $(".notepad-window").show();
 }
 
 function turnProgress() {
+  resetBottomPanelButtons();
+  $("#turnProgress").addClass('bottom-panel-button-selected');
+
   $(".bottom-panel-pane").hide();
   $(".table-window").show();
 }
 
 function turnFeedback() {
+  resetBottomPanelButtons();
+  $("#turnFeedback").addClass('bottom-panel-button-selected');
+
   $(".bottom-panel-pane").hide();
   $(".feedback-window").show();
 }
