@@ -66,16 +66,22 @@ public class MissionGameCreator {
     final String questAnswer;
     final List<String> answerOptions;
     if (missionsDesc.getType() == MissionType.EDU) {
+      List<String> subjects = new ArrayList<>(missionsDesc.getSubjects());
+      List<String> objects = new ArrayList<>(missionsDesc.getObjects());
+
+      rand.shuffle(subjects);
+      rand.shuffle(objects);
+
       intro += "<br><br><p><button id='hintBtn' onmouseup='hintBtn()' class=\"btn btn-primary\" type=\"button\" data-toggle=\"collapse\" data-target='#collapseExample' data-container='body' aria-expanded=\"false\" aria-controls=\"collapseExample\">Порассуждать</button></p><div class=\"collapse\" id=\"collapseExample\"><div id=\"solution-text\" class='card card-body background-colored'>{solution-text}</div></div>";
       intro = intro.replace("{solution-text}", missionsDesc.getSolution());
 
-      intro = intro.replace("{subjects}", "<b>" + stringFormatter.joinList(missionsDesc.getSubjects()) + "</b>");
-      intro = intro.replace("{objects}", "<b>" + stringFormatter.joinList(missionsDesc.getObjects()) + "</b>");
+      intro = intro.replace("{subjects}", "<b>" + stringFormatter.joinList(subjects) + "</b>");
+      intro = intro.replace("{objects}", "<b>" + stringFormatter.joinList(objects) + "</b>");
 
-      answerOptions = generatorMethods.getAnswerOptions(missionsDesc.getAskAbout(), missionsDesc.getSubjects(), missionsDesc.getObjects());
+      answerOptions = generatorMethods.getAnswerOptions(missionsDesc.getAskAbout(), subjects, objects);
       questAnswer = missionsDesc.getRightAnswer();
-      names.add(missionsDesc.getSubjects());
-      names.add(missionsDesc.getObjects());
+      names.add(subjects);
+      names.add(objects);
     } else if (missionsDesc.getType() == MissionType.STANDARD) {
       List<String> subjects = new ArrayList<>(missionsDesc.getSubjects());
       List<String> objects = new ArrayList<>(missionsDesc.getObjects());
