@@ -350,6 +350,7 @@ function initUi() {
   $("#turnProgress").on("click", turnProgress);
   $("#turnFeedback").on("click", turnFeedback);
   $("#sendFeedback").on("click", sendFeedback);
+  $("#top-players-container").on("scroll", hideAllTooltips);
   turnChat();
 
   $(chatMsg).on('keydown', function(e) {
