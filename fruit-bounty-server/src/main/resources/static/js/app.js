@@ -510,6 +510,10 @@ function storeUuid() {
 
 /* === Adds === */
 async function showAdds() {
+  if (userInfo.mission < MIN_USER_LEVEL_FOR_ADDS) {
+    return;
+  }
+
   if (getState() === VK_TYPE) {
     window.vkBridge.send("VKWebAppCheckNativeAds", {"ad_format": "interstitial"});
 

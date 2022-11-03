@@ -40,9 +40,7 @@ function initGameUi() {
 }
 
 function processGameStartedOperation(newGame) {
-  if (userInfo.mission >= MIN_USER_LEVEL_FOR_ADDS) {
-    showAdds();
-  }
+  showAdds();
 
   window.game = newGame;
   $('.background-img').attr('src', imgGameScreen.src);
