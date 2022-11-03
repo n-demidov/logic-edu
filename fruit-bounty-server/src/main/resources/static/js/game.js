@@ -17,6 +17,7 @@ var currentIntroPage;
 var maxTimerProgressWidth;
 var gameWindowMayBeClosed;
 var nextQuestEnableTimerId;
+var gameFinishedWithWin = false;
 
 function initGameUi() {
   maxTimerProgressWidth = $('#time-progress').width();
@@ -210,6 +211,10 @@ function hideConfirmWindow() {
 }
 
 function onSubwindowClose(e) {
+  if (!gameFinishedWithWin && getRandomInt(1, 101) <= 75) {
+    showAdds();
+  }
+
   $('.background-img').attr('src', imgLobbyScreen.src);
 
   $("#game-window").hide();
@@ -397,12 +402,15 @@ function paintWinner(game) {
   if (gameResult === "win") {
     $('#subwindow-container').css("background-image", "url(" + imgVictory.src + ")");
     $('#subwindow-title').text(localize('win_caps'));
+    gameFinishedWithWin = true;
   } else if (gameResult === "defeat") {
     $('#subwindow-container').css("background-image", "url(" + imgDefeat.src + ")");
     $('#subwindow-title').text(localize('defeat_caps'));
+    gameFinishedWithWin = false;
   } else {
     // $('#subwindow-container').css("background-image", "url(" + imgDraw.src + ")");
     $('#subwindow-title').text('Error');
+    gameFinishedWithWin = false;
   }
 
   $('#subwindow-background').show();
