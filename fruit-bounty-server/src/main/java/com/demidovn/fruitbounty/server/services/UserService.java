@@ -18,6 +18,7 @@ import java.util.List;
 public class UserService {
 
   private static final String USER_SCORE_FIELD = "score";
+  private static final String CREATED_ON_FIELD = "created";
   private static final int WINS_THRESHOLD = 0;
   private static final int HOURS_THRESHOLD = 48;
   private static final int SECOND_TRIE_HOURS_THRESHOLD = 48;
@@ -26,10 +27,11 @@ public class UserService {
   @Autowired
   private UserRepository userRepository;
 
-  private PageRequest ratingTablePage = new PageRequest(
+  private final PageRequest ratingTablePage = new PageRequest(
     0,
     AppConfigs.RATING_TABLE_PLAYERS_COUNT,
-    new Sort(Direction.DESC, USER_SCORE_FIELD));
+          new Sort(Direction.DESC, USER_SCORE_FIELD).and(
+                  new Sort(Direction.ASC, CREATED_ON_FIELD)));
 
   public User create(User user) {
     return userRepository.save(user);
