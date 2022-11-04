@@ -24,8 +24,8 @@ function getLocalization() {
       ru: "Рейтинг"
     },
     "play-next-level": {
-      en: "ИГРАТЬ уровень {level}",
-      ru: "ИГРАТЬ уровень {level}"
+      en: "ИГРАТЬ<br>уровень {level}",
+      ru: "ИГРАТЬ<br>уровень {level}"
     },
     "play-single-game-2": {
       selector: "#playSingleGame2",

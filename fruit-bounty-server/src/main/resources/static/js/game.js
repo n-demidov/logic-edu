@@ -88,6 +88,7 @@ function resetGameRequestUi() {
 }
 
 function switchToGameWindow() {
+  hidePlayQuests();
   $("#lobby-window").hide();
   $("#game-window").show();
 }

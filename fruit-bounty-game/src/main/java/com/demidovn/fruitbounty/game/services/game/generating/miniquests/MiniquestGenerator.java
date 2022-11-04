@@ -14,6 +14,7 @@ import com.demidovn.fruitbounty.game.services.game.converters.NamesConverters;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,7 +70,8 @@ public class MiniquestGenerator {
 
             for (MiniquestCondition miniQuestCondition : sentence) {
                 sb.append("<b>");
-                sb.append(namesConverters.getString(miniQuestCondition.subjectIdx, miniquestInfo.getSubjects()));
+                sb.append(StringUtils.capitalize(
+                        namesConverters.getString(miniQuestCondition.subjectIdx, miniquestInfo.getSubjects())));
                 sb.append("</b> ");
 
                 if (miniQuestCondition.inverse) {

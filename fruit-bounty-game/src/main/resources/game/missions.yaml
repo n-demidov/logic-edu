@@ -1,6 +1,6 @@
 version: 1
 missions:
-  - type: EDU
+  - type: MISSION_EDU
     editorNote: "table-1 quest, simple: #1"
     intro: "Просматривая утренний выпуск «The London Gazette», вы натыкаетесь на вакансию в детективное агенство.<br><br>
       
@@ -24,7 +24,7 @@ missions:
       "Раз на Сент-Джеймс находится синяя доска, следовательно зелёной там нет...<br><br>
       Хм, пожалуй, тут можно составить таблицу...<br><br>
       Подсказка: внизу экрана находится таблица. Можете использовать ее при решении задачи."
-  - type: EDU
+  - type: MISSION_EDU
     editorNote: "table-1 quest, simple: #2"
     intro: "Придя на Бэдфорд сквер вы находите доску с объявлениями зеленого цвета.<br><br>
       Осмотрев её, вы натыкаетесь на следующее задание:<br>
@@ -41,7 +41,7 @@ missions:
     rightAnswer: Пекарня
     solution:
       "Хм, пожалуй, тут можно составить таблицу...<br><br> Подсказка: внизу экрана находится таблица. Можете использовать ее при решении задачи."
-  - type: EDU
+  - type: MISSION_EDU
     editorNote: "table-1 quest, simple: #3"
     intro: "Придя в пекарню вы получаете заветное письмо. Вот его содержание:<br><br>
       «Отлично, остался последний квест по вычислению адреса.<br><br>
@@ -57,7 +57,7 @@ missions:
     rightAnswer: Тарлинг стрит
     solution:
       "Хм, пожалуй, тут можно составить таблицу...<br><br> Подсказка: внизу экрана находится таблица. Можете использовать ее при решении задачи."
-  - type: EDU
+  - type: MISSION_EDU
     editorNote: "table-1 quest, simple: #4"
     intro: "Вы стоите у крыльца добротного кирпичного дома. На двери висит вывеска: «Детективное агенство Уотсон и Ко».<br><br>
       Позвонив в дверь, вас приглашает к себе в офис мистер Кейбл. Комната украшена разными интересными предметами:
@@ -69,7 +69,7 @@ missions:
       Выходя из кабинета, вы думаете, что для старта детективной карьеры вполне неплохо. И кажется в этой конторе есть куда расти.<br><br>
       
       Первое письмо мистеру Дигби.<br>
-      Отправившись в спортивный клуб, вы узнаете, что трое джентельменов - среди которых был и мистер Дигби - пошли играть в различные виды спорта -
+      Придя в спортивный клуб, вы узнаете, что трое джентельменов - среди которых был и мистер Дигби - пошли играть в различные виды спорта -
       <b>теннис</b>, <b>крокет</b> и <b>гольф</b>. Как оказалось:<br>
       - Мистер Уайт пошел играть в теннис.<br>
       - Мистер Найтли никогда не играет в гольф.<br><br>
@@ -83,7 +83,7 @@ missions:
     rightAnswer: гольф
     solution:
       "Хм, пожалуй, тут можно составить таблицу...<br><br> Подсказка: внизу экрана находится таблица. Можете использовать ее при решении задачи."
-  - type: EDU
+  - type: MISSION_EDU
     editorNote: "table-1 quest, simple: #5"
     intro: "На поле для гольфа вы нашли мистера Дигсби и передали ему письмо.<br><br>
       Следующее письмо предназначено для Бенджамина Госсета, студента 3-го курса в университете иностранных языков.<br><br>
@@ -105,7 +105,7 @@ missions:
     rightAnswer: арабского
     solution:
       "Хм, пожалуй, тут можно составить таблицу...<br><br> Подсказка: внизу экрана находится таблица. Можете использовать ее при решении задачи."
-  - type: EDU
+  - type: MISSION_EDU
     editorNote: "table-1 quest, simple: #6"
     intro: "Мистер Кейбл был приятно удивлен как быстро вы справились с этими поручениями.<br><br>
     
@@ -129,7 +129,7 @@ missions:
     rightAnswer: музей
     solution:
       "Хм, пожалуй, тут можно составить таблицу...<br><br> Подсказка: внизу экрана находится таблица. Можете использовать ее при решении задачи."
-  - type: EDU
+  - type: MISSION_EDU
     editorNote: "table-1 quest, simple: #7"
     intro: "Вбежав в музей, вы узнаете у консьержа, что джентельмен по описанию похожий на Роджера Флинта входил сюда...
       Точнее, аж 4 человека подходящих под его описание! Все они отправились в разные залы:
@@ -150,7 +150,7 @@ missions:
     rightAnswer: Персидский
     solution:
       "Хм, пожалуй, тут можно составить таблицу...<br><br> Подсказка: внизу экрана находится таблица. Можете использовать ее при решении задачи."
-  - type: EDU
+  - type: MISSION_EDU
     editorNote: "simple miniquest: #1"
     intro: "— Вы отлично справились - хвалит вас мистер Кейбл.<br>
       — Теперь вы попробуете себя в роли настоящего детектива.
@@ -180,7 +180,7 @@ missions:
     rightAnswer: Боб
     solution:
       "Хм, если Кети сказала неправду, выходит, что Майкл играл в футбол..."
-  - type: EDU
+  - type: MISSION_EDU
     editorNote: "simple miniquest: #2"
     intro: "Учитель благодарит вас.<br><br>
       Второе задание - это найти убежавшего котенка.<br>
@@ -198,7 +198,7 @@ missions:
     solution:
       "Если Энн не права, то котенок не под крыльцом. Но это противоречит высказыванию Джорджа.
        Следовательно, Энн должна говорить правду..."
-  - type: EDU
+  - type: MISSION_EDU
     editorNote: "simple miniquest: #3"
     intro: "Вы приносите пропавшего котенка и дети радостно благодарят вас.<br><br>
       
@@ -221,7 +221,7 @@ missions:
 
 
   -
-    type: EDU
+    type: MISSION_EDU
     editorNote: "simple miniquest: #1, edu"
     intro: "<b>Обучающая игра</b><br>
       Пример решения задачи <b>методом рассуждений</b>.
@@ -248,7 +248,7 @@ missions:
       в) Остается считать верным третье утверждение, а первое и второе — ложными. Таким образом, Вадим не изучает арабский. Он учит китайский.<br><br>
       <b>Ответ:</b> Вадим изучает китайский язык."
   -
-    type: EDU
+    type: MISSION_EDU
     editorNote: "simple miniquest: #2, edu"
     intro: "<b>Вадим</b> изучает иностранный язык. В учебном заведении, которое он посещает, преподают <b>японский</b> и <b>арабский</b>.
       На вопрос, какой язык изучает Вадим, трое его знакомых ответили:<br>
@@ -270,7 +270,7 @@ missions:
       в) Остается считать верным третье утверждение, а первое и второе — ложными. Таким образом, Вадим не изучает японский. Он учит арабский.<br><br>
       <b>Ответ:</b> Вадим изучает арабский язык."
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest: #3"
     intro: "{subjects} изучает иностранный язык. Это может быть один из: {objects}.
       Его знакомые дали следующие фразы:<br>{statements}<br>
@@ -285,7 +285,7 @@ missions:
     contradictionsEnabled: false
     answerOutOfStatements: STRICTLY_IN_STATEMENTS
   -
-    type: EDU
+    type: MISSION_EDU
     editorNote: "simple miniquest: #4, edu"
     intro: "<b>Вадим</b> изучает иностранный язык. В учебном заведении, которое он посещает, преподают <b>испанский</b> и <b>итальянский</b>.
       На вопрос, какой язык изучает Вадим, трое его знакомых ответили:<br>
@@ -308,7 +308,7 @@ missions:
        А это противоречит условию задачи, т.к. молодой человек изучает ровно один язык.<br><br>
       <b>Ответ:</b> Истинно второе суждение, а Вадим изучает испанский язык."
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest: #5"
     intro: "{subjects} изучает иностранный язык. Это может быть один из: {objects}.
       Его знакомые дали следующие фразы:<br>{statements}<br>
@@ -323,7 +323,7 @@ missions:
     contradictionsEnabled: true
     answerOutOfStatements: STRICTLY_IN_STATEMENTS
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest: #6"
     intro: "{subjects} имеет обыкновение посещать спортивный клуб по четвергам.
       По высказываниям его окружения он особенно неравнодушен к следующим видам спорта: {objects}.
@@ -339,7 +339,7 @@ missions:
     contradictionsEnabled: false
     answerOutOfStatements: STRICTLY_IN_STATEMENTS
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest: #7"
     intro: "{subjects} имеет обыкновение посещать спортивный клуб по четвергам.
       По высказываниям его окружения он особенно неравнодушен к следующим видам спорта: {objects}.
@@ -355,7 +355,7 @@ missions:
     contradictionsEnabled: true
     answerOutOfStatements: STRICTLY_IN_STATEMENTS
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest: #8"
     intro: "{subjects} имеет обыкновение посещать спортивный клуб по четвергам.
       По высказываниям его окружения он особенно неравнодушен к следующим видам спорта: {objects}.
@@ -371,7 +371,7 @@ missions:
     contradictionsEnabled: true
     answerOutOfStatements: STRICTLY_IN_STATEMENTS
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest: #9, answerOutOfStatements"
     intro: "{subjects} имеет обыкновение посещать спортивный клуб по четвергам.
       По высказываниям его окружения он особенно неравнодушен к следующим видам спорта: {objects}.
@@ -387,7 +387,7 @@ missions:
     contradictionsEnabled: false
     answerOutOfStatements: STRICTLY_OUT_OF_STATEMENTS
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest: #10"
     intro: "{subjects} имеет обыкновение посещать спортивный клуб по четвергам.
       По высказываниям его окружения он особенно неравнодушен к следующим видам спорта: {objects}.
@@ -404,7 +404,7 @@ missions:
     answerOutOfStatements: STRICTLY_IN_STATEMENTS
 
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple inversed miniquest: #1"
     intro: "{subjects} был в кофейне тем вечером. В наличии имелось: {objects}.
       Известно, что на один из напитков у него аллергия, поэтому он не стал бы его пить.
@@ -420,7 +420,7 @@ missions:
     repeatsLimit: 3
     contradictionsEnabled: true
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple inversed miniquest: #2"
     intro: "{subjects} был в кофейне тем вечером. В наличии имелось: {objects}.
       Известно, что он равнодушен к одному из напитков, поэтому не стал бы его пить при наличии альтернатив.
@@ -435,7 +435,7 @@ missions:
     repeatsLimit: 4
     contradictionsEnabled: true
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple inversed miniquest: #3"
     intro: "{subjects} изучает иностранный язык. Это может быть один из: {objects}.
       Однако, известно, что {subjects} не любит один из этих языков; и никогда не стал бы его изучать.
@@ -451,7 +451,7 @@ missions:
     repeatsLimit: 4
     contradictionsEnabled: true
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple inversed miniquest: #4"
     intro: "{subjects} имеет обыкновение посещать спортивный клуб по четвергам.
       В круг интересов членов клуба входят следующие виды спорта: {objects}.
@@ -469,7 +469,7 @@ missions:
     repeatsLimit: 4
     contradictionsEnabled: true
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple inversed miniquest: #5"
     intro: "{subjects} имеет обыкновение посещать спортивный клуб по четвергам.
           В круг интересов членов клуба входят следующие виды спорта: {objects}.
@@ -488,7 +488,7 @@ missions:
     contradictionsEnabled: true
 
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest with n-trueStatements: #1"
     intro: "{subjects} занимается спортом. Это может быть один из: {objects}.
       Её друзья дали следующие фразы:<br>{statements}<br>
@@ -502,7 +502,7 @@ missions:
     repeatsLimit: 3
     contradictionsEnabled: true
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest with n-trueStatements: #2"
     intro: "{subjects} с подругами занимаются различными видами спорта. Девушки увлекаются: {objects}.
       Известно, что {subjects} занимается только одним видом спорта.
@@ -517,7 +517,7 @@ missions:
     repeatsLimit: 3
     contradictionsEnabled: true
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest with n-trueStatements: #3"
     intro: "{subjects} с подругами занимаются различными видами спорта. Девушки увлекаются: {objects}.
       Известно, что {subjects} занимается только одним видом спорта.
@@ -532,7 +532,7 @@ missions:
     repeatsLimit: 3
     contradictionsEnabled: true
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest with n-trueStatements: #4"
     intro: "{subjects} с подругами занимаются различными видами спорта. Девушки увлекаются: {objects}.
       Известно, что {subjects} занимается только одним видом спорта.
@@ -547,7 +547,7 @@ missions:
     repeatsLimit: 5
     contradictionsEnabled: true
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest with n-trueStatements: #5"
     intro: "{subjects} с подругами занимаются различными видами спорта. Девушки увлекаются: {objects}.
       Известно, что {subjects} занимается только одним видом спорта.
@@ -563,7 +563,7 @@ missions:
     contradictionsEnabled: true
 
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest, nStatementsInSentence: #1"
     intro: "{subjects} и ее подруги интересуются различными видами искусств: {objects}.
       Известно, что {subjects} увлекается только одним видом искусств.
@@ -583,7 +583,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest, nStatementsInSentence: #2"
     intro: "{subjects} и ее подруги интересуются различными видами искусств: {objects}.
       Известно, что {subjects} увлекается только одним видом искусств.
@@ -603,7 +603,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest, nStatementsInSentence: #3"
     intro: "{subjects} и ее подруги интересуются различными видами искусств: {objects}.
       Известно, что {subjects} увлекается только одним видом искусств.
@@ -623,7 +623,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest, nStatementsInSentence: #4"
     intro: "Ученики нашли в земле {subjects}.
       Рассматривая удивительную находку, каждый высказал по два предположения:<br>{statements}<br>
@@ -644,7 +644,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest, nStatementsInSentence: #5"
     intro: "Ученики нашли в земле {subjects}.
       Рассматривая удивительную находку, каждый высказал по два предположения:<br>{statements}<br>
@@ -665,7 +665,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest, nStatementsInSentence: #6"
     intro: "Ученики нашли в земле {subjects}.
       Рассматривая удивительную находку, каждый высказал по два предположения:<br>{statements}<br>
@@ -686,7 +686,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest, nStatementsInSentence: #7"
     intro: "Ученики нашли в земле {subjects}.
       Рассматривая удивительную находку, каждый высказал по два предположения:<br>{statements}<br>
@@ -707,7 +707,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest, nStatementsInSentence: #8"
     intro: "{subjects} и ее подруги интересуются различными видами искусств: {objects}.
       Известно, что {subjects} увлекается только одним видом искусств.
@@ -728,7 +728,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest, nStatementsInSentence: #9"
     intro: "{subjects} и ее подруги интересуются различными видами искусств: {objects}.
       Известно, что {subjects} увлекается только одним видом искусств.
@@ -749,7 +749,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest, nStatementsInSentence: #10"
     intro: "{subjects} и ее подруги интересуются различными видами искусств: {objects}.
       Известно, что {subjects} увлекается только одним видом искусств.
@@ -771,7 +771,7 @@ missions:
     rightAnswersNum: 1
 
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "n subjects, nStatementsInSentence, simple: #1"
     intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
       При этом каждая увлекается ровно одним видом искусств.
@@ -791,7 +791,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "n subjects, nStatementsInSentence, simple: #2"
     intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
       При этом каждая увлекается ровно одним видом искусств.
@@ -811,7 +811,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "n subjects, nStatementsInSentence, simple: #3"
     intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
       При этом каждая увлекается ровно одним видом искусств.
@@ -831,7 +831,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "n subjects, nStatementsInSentence, simple: #4"
     intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
       При этом каждая увлекается ровно одним видом искусств.
@@ -851,7 +851,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "n subjects, nStatementsInSentence, simple: #5"
     intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
       При этом каждая увлекается ровно одним видом искусств.
@@ -871,7 +871,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "n subjects, nStatementsInSentence, simple: #6"
     intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
       При этом каждая увлекается ровно одним видом искусств.
@@ -891,7 +891,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "n subjects, nStatementsInSentence, simple: #7"
     intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
       При этом каждая увлекается ровно одним видом искусств.
@@ -911,7 +911,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "n subjects, nStatementsInSentence, simple: #8"
     intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
       При этом каждая увлекается ровно одним видом искусств.
@@ -932,7 +932,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "n subjects, nStatementsInSentence, simple: #9"
     intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
       При этом каждая увлекается ровно одним видом искусств.
@@ -953,7 +953,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "n subjects, nStatementsInSentence, simple: #10"
     intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
       При этом каждая увлекается ровно одним видом искусств.
@@ -977,7 +977,7 @@ missions:
 
   # === Medium missions ===
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "table-1 quest, medium: #1"
     intro: "{subjects} изучают различные иностранные языки: {objects}.
       Известно, что:<br>{statements}<br>
@@ -990,7 +990,7 @@ missions:
     minAnswerInfers: 3
     maxAnswerInfers: 3
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "table-1 quest, medium: #2; some info may stay unknown"
     intro: "{subjects} изучают различные иностранные языки: {objects}.
       Известно, что:<br>{statements}<br>
@@ -1003,7 +1003,7 @@ missions:
     minAnswerInfers: 2
     maxAnswerInfers: 2
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "table-1 quest, medium: #3"
     intro: "{subjects} изучают различные иностранные языки: {objects}.
       Известно, что:<br>{statements}<br>
@@ -1017,7 +1017,7 @@ missions:
     maxAnswerInfers: 3
 
   -
-    type: TABLE_2
+    type: MISSION_TABLE_2
     editorNote: "table-2 quest: #1, edu"
     intro: "Дочери писательницы Дорис Кей: {subjects} тоже очень талантливы.
       Они приобрели известность в разных видах искусств: {objects-1}.
@@ -1033,7 +1033,7 @@ missions:
       - [ пении, балете, кино ]
     demonstrativePronoun: Та
   -
-    type: TABLE_2
+    type: MISSION_TABLE_2
     editorNote: "table-2 quest: #2"
     intro: "Дочери писательницы Дорис Кей: {subjects} тоже очень талантливы.
       Они приобрели известность в разных видах искусств: {objects-1}.
@@ -1049,7 +1049,7 @@ missions:
       - [ пении, балете, кино ]
     demonstrativePronoun: Та
   -
-    type: TABLE_2
+    type: MISSION_TABLE_2
     editorNote: "table-2 quest: #3"
     intro: "Дочери писательницы Дорис Кей: {subjects} тоже очень талантливы.
       Они приобрели известность в разных видах искусств: {objects-1}.
@@ -1067,7 +1067,7 @@ missions:
 
 
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest, nStatementsInSentence: #1"
     intro: "{subjects} и ее подруги интересуются различными видами искусств: {objects}.
       Известно, что {subjects} увлекается только одним видом искусств.
@@ -1087,7 +1087,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "simple miniquest, nStatementsInSentence: #2"
     intro: "{subjects} и ее подруги интересуются различными видами искусств: {objects}.
       Известно, что {subjects} увлекается только одним видом искусств.
@@ -1108,7 +1108,7 @@ missions:
     rightAnswersNum: 1
 
 
-  - type: STANDARD
+  - type: MISSION_STANDARD
     editorNote: "test nStatementsInSentence"
     intro: "Министры иностранных дел {objects} обсудили за закрытыми дверями проекты соглашения, представленные каждой из стран.
       Отвечая затем на вопрос журналистов: \"Чей именно проект был принят?\", министры дали такие ответы:<br><br>
@@ -1129,7 +1129,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "test nStatementsInSentence"
     intro: "3 подруги — {subjects} — участвовали в различных соревнованиях: {objects}.<br>
       Отвечая затем на вопросы журналистов, девушки дали такие ответы:<br><br>
@@ -1149,7 +1149,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "test nStatementsInSentence"
     intro: "Четыре подруги — {subjects} — участвовали в различных соревнованиях: {objects}.<br>
       Отвечая затем на вопросы журналистов, девушки дали такие ответы:<br><br>
@@ -1169,7 +1169,7 @@ missions:
     contradictionsEnabled: true
     rightAnswersNum: 1
   -
-    type: STANDARD
+    type: MISSION_STANDARD
     editorNote: "test nStatementsInSentence"
     intro: "Четыре подруги — {subjects} — участвовали в различных соревнованиях: {objects}.<br>
       Установите, в каком виде спорта участвовала каждая из девушек, если известно, что в каждом из приведенных ниже ответов,

@@ -1,4 +1,4 @@
-package com.demidovn.fruitbounty.game.model.missions;
+package com.demidovn.fruitbounty.game.model.descriptors;
 
 import lombok.Data;
 

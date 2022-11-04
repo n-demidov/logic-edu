@@ -25,6 +25,11 @@ var APPLY_GAME_REQUEST = "y";
 var CANCEL_GAME_REQUEST = "n";
 var PLAY_MISSION_REQUEST = "MISSION";
 var PLAY_BRIEF_1_REQUEST = "BRIEF_1";
+var PLAY_BRIEF_2_REQUEST = "BRIEF_2";
+var PLAY_BRIEF_3_REQUEST = "BRIEF_3";
+var PLAY_BRIEF_HARDEST_REQUEST = "BRIEF_100";
+
+// var PLAY_BRIEF_1_REQUEST = "BRIEF_1";
 var PLAY_COMPOSITE_1_REQUEST = "COMPOSITE_1";
 var PLAY_COMPOSITE_2_REQUEST = "COMPOSITE_2";
 var COMPOSITE_GAMES = [PLAY_COMPOSITE_1_REQUEST, PLAY_COMPOSITE_2_REQUEST];
@@ -148,7 +153,6 @@ function sendPlayRequest(playGameType) {
     isWaitingForOpponent = true;
     $("#play-mission-caption").text(localize("matching-players"));
     $("#play-loader").show();
-    startDisplayTips();
   }
 
   sendOperation(SEND_PLAY_REQUEST_OPERATION_TYPE, sendPlayPayload);
@@ -156,6 +160,52 @@ function sendPlayRequest(playGameType) {
 
 function playMission() {
   sendPlayRequest(PLAY_MISSION_REQUEST);
+}
+
+function play1Quest() {
+  if (userInfo.mission < 4) {
+    alert("Доступно с 4 уровня");
+    return;
+  }
+  sendPlayRequest(PLAY_BRIEF_1_REQUEST);
+}
+
+function play2Quest() {
+  if (userInfo.mission < 8) {
+    alert("Доступно с 8 уровня");
+    return;
+  }
+  sendPlayRequest(PLAY_BRIEF_2_REQUEST);
+}
+
+function playMediumQuest() {
+  if (userInfo.mission < 10) {
+    alert("Доступно с 10 уровня");
+    return;
+  }
+  sendPlayRequest(PLAY_BRIEF_3_REQUEST);
+}
+
+function playHardestQuest() {
+  if (userInfo.mission < 30) {
+    alert("Доступно с 30 уровня");
+    return;
+  }
+  sendPlayRequest(PLAY_BRIEF_HARDEST_REQUEST);
+}
+
+function showPlayQuests() {
+  if (userInfo.mission < 4) {
+    alert("Доступно с 4 уровня");
+    return;
+  }
+  $("#top-players-container-main").hide();
+  $("#play-quests-container").show();
+}
+
+function hidePlayQuests() {
+  $("#top-players-container-main").show();
+  $("#play-quests-container").hide();
 }
 
 function playBrief1Game() {
@@ -356,8 +406,14 @@ function initUi() {
   });
   $("#reconnect").click(connectToServer);
   $("#play-mission").click(playMission);
-  $("#play-mission-caption").click(playMission);
-  $("#play-loader").click(playMission);
+  $("#play-quests-btn").click(showPlayQuests);
+  $("#hide-play-quests-btn").click(hidePlayQuests);
+
+  $("#play-1-quest-btn").click(play1Quest);
+  $("#play-2-quest-btn").click(play2Quest);
+  $("#play-medium-quest-btn").click(playMediumQuest);
+  $("#play-hardest-quest-btn").click(playHardestQuest);
+
   $("#playBrief1Game").click(playBrief1Game);
   $("#playSingleGame1").click(playSingleplay1);
   $("#playSingleGame2").click(playSingleplay2);
@@ -392,7 +448,7 @@ function initUi() {
 
 function updatePlayButtonText() {
   var playNextLevelText = localize("play-next-level").replace("{level}", userInfo.mission);
-  $("#play-mission-caption").text(playNextLevelText);
+  $("#play-mission-caption").html(playNextLevelText);
 }
 
 function preloadFirstImages() {

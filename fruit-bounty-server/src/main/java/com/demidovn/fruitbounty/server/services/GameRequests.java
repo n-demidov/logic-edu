@@ -83,8 +83,8 @@ public class GameRequests {
             user.getMission());
     gameNotifier.notifyThatGameStarted(game);
 
-    statService.incCounter(MetricsConsts.GAME.ALL_STAT);
-    statService.incCounter(MetricsConsts.GAME.CONCRETE_STAT + game.getQuestType());
+    statService.incCounter(MetricsConsts.GAME.START_ALL_STAT);
+    statService.incCounter(MetricsConsts.GAME.START_CONCRETE_STAT + game.getQuestType());
   }
 
 }

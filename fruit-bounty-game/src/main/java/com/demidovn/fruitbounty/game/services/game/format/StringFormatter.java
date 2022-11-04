@@ -17,6 +17,14 @@ public class StringFormatter {
     private static final Randomizer rand = new Randomizer();
 
     public String joinList(List<String> subjects) {
+        return joinList(subjects, commonSources.getCommonSources().getAnd());
+    }
+
+    public String joinList(List<String> subjects, String lastConnector) {
+        if (lastConnector == null) {
+            lastConnector = commonSources.getCommonSources().getAnd();
+        }
+
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < subjects.size() - 1; i++) {
             if (i > 0) {
@@ -29,7 +37,7 @@ public class StringFormatter {
 
         if (subjects.size() > 1) {
             sb.append(" ");
-            sb.append(commonSources.getCommonSources().getAnd());
+            sb.append(lastConnector);
             sb.append(" ");
         }
 

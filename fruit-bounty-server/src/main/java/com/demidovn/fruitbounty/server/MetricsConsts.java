@@ -12,8 +12,10 @@ public class MetricsConsts {
     }
 
     public static class GAME {
-        public static final String ALL_STAT = "GAME.START.ALL";
-        public static final String CONCRETE_STAT = "GAME.START.";
+        public static final String START_ALL_STAT = "GAME.START.ALL";
+        public static final String START_CONCRETE_STAT = "GAME.START.";
+        public static final String WIN_ALL_STAT = "GAME.WIN.ALL";
+        public static final String WIN_CONCRETE_STAT = "GAME.WIN.";
     }
 
     public static class AUTH {

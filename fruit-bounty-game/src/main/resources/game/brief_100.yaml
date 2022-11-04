@@ -1,0 +1,16 @@
+type: STANDARD
+editorNote: "brief-100"
+intro: "Четыре подруги — {subjects} — участвовали в различных соревнованиях: {objects}.<br>
+  Установите, в каком виде спорта принимала участие {answer_subject}, если известно, что в каждом из приведенных ниже ответов,
+  которые дали девушки опоздавшему к финишу корреспонденту, верной является лишь половина.<br><br>
+  {statements}<br>"
+subjects: [ Мэри, Поли, Роуз, Энн ]
+verb: участвовала в
+objects: [ беге, плавании, ходьбе, теннисе ]
+sentencesNum: 3
+statementsInSentence: 2
+verityAllocation: [[true, false], [true, false], [true, false]]
+minAnswerInfers: 3
+repeatsLimit: 3
+contradictionsEnabled: true
+rightAnswersNum: 1

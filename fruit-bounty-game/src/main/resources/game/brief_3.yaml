@@ -1,0 +1,20 @@
+type: STANDARD
+editorNote: "brief-3"
+intro: "В школе убежал {subjects}. Учитель просит вас помочь найти его.
+  Убежать он мог {objects}.
+  <br><br>
+  Дети дали следующие подсказки:<br>{statements}<br>
+  Учитель уверена, что только один из учеников прав, а другие ошибаются.<br><br>
+  Куда убежал {answer_subject}?"
+subjects: [ котенок ]
+verbPositive: убежал
+verbNegative: не убегал
+objects: [ под крыльцо, в сад, на крышу, на чердак, во двор, в школьный класс, в столовую, в коридор, в погреб ]
+minObjectsNum: 2
+maxObjectsNum: 6
+lastObjectConnector: или
+sentencesNumMin: 3
+sentencesNumMax: 5
+trueStatementsNum: 1
+repeatsLimit: 2
+contradictionsEnabled: 50

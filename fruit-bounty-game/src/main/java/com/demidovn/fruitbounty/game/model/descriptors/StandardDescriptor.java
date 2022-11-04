@@ -1,4 +1,4 @@
-package com.demidovn.fruitbounty.game.model.missions;
+package com.demidovn.fruitbounty.game.model.descriptors;
 
 import com.demidovn.fruitbounty.game.model.quest.AskAbout;
 import com.demidovn.fruitbounty.game.model.quest.NonTargetAnswers;
@@ -10,10 +10,10 @@ import java.io.Serializable;
 import java.util.List;
 
 @Data
-public class MissionDescriptor implements VerbDescriptor, Serializable {
+public class StandardDescriptor implements VerbDescriptor, Serializable {
 
-    private int missionNumber;
-    private MissionType type;
+    private DescriptorType type;
+
     private String editorNote;
     private String intro;
     private AskAbout askAbout = AskAbout.OBJECT;
@@ -22,19 +22,27 @@ public class MissionDescriptor implements VerbDescriptor, Serializable {
 
     // Standard
     private List<String> subjects;
+    private String lastSubjectConnector;
     private String verb;
     private String verbPositive;
     private String verbNegative;
     private List<String> objects;
+    private Integer minObjectsNum;
+    private Integer maxObjectsNum;
+    private Integer minSubjectsAndObjectsNum;
+    private Integer maxSubjectsAndObjectsNum;
+    private String lastObjectConnector;
 
-    private int sentencesNum;
+    private Integer sentencesNum;
+    private Integer sentencesNumMin;
+    private Integer sentencesNumMax;
     private int statementsInSentence = 1;
 
     private List<List<Boolean>> verityAllocation;
     private int trueStatementsNum = -1;
 
     private int repeatsLimit;
-    private boolean contradictionsEnabled;
+    private Object contradictionsEnabled = false; // boolean or percents (in int)
 
     private int rightAnswersNum = 1;
     private NonTargetAnswers nonTargetAnswers = NonTargetAnswers.SKIP_VALIDATION;

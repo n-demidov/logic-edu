@@ -9,10 +9,13 @@ import java.util.List;
 public class GameOptions {
 
   public static final String MISSIONS_CONFIG = "game/missions.yaml";
-  public static final String COMPOSITE_SOURCES_CONFIG = "game/sources.yaml";
   public static final String COMMON_SOURCES_CONFIG = "game/common_sources.yaml";
+  public static final String BRIEF_1_CONFIG = "game/brief_1.yaml";
+  public static final String BRIEF_2_CONFIG = "game/brief_2.yaml";
+  public static final String BRIEF_3_CONFIG = "game/brief_3.yaml";
+  public static final String BRIEF_100_CONFIG = "game/brief_100.yaml";
+  public static final String COMPOSITE_SOURCES_CONFIG = "game/sources.yaml";
   public static final String COMPOSITE_CONFIG = "game/composite.yaml";
-  public static final String COMPOSITE1_CONFIG = "game/composite1.yaml";
   public static final String COMPOSITE2_CONFIG = "game/composite2.yaml";
 
   public static int INFINITY_REPEATS_LIMIT = -1;
@@ -26,7 +29,10 @@ public class GameOptions {
 
   public static class GameRating {
     public static int MISSION = 0;
-    public static int BRIEF_1 = 55;
+    public static int BRIEF_1 = 5;
+    public static int BRIEF_2 = 15;
+    public static int BRIEF_3 = 30;
+    public static int BRIEF_100 = 500;
     public static int COMPOSITE = 2000;
   }
 
@@ -66,11 +72,6 @@ public class GameOptions {
     public static int maxSentencesNum = 3;
     public static int minStatementsInSentence = 1;
     public static int maxStatementsInSentence = 3;
-  }
-
-  public static class Brief1 {
-    public static int MIN_OBJECTS = 2;
-    public static int MAX_OBJECTS = 6;
   }
 
   public static final int CELL_TYPES_COUNT = 9;

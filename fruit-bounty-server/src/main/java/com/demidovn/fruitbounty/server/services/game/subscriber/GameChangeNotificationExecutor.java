@@ -4,6 +4,7 @@ import com.demidovn.fruitbounty.gameapi.model.Game;
 import com.demidovn.fruitbounty.gameapi.model.Player;
 import com.demidovn.fruitbounty.gameapi.model.backend.QuestType;
 import com.demidovn.fruitbounty.server.AppConfigs;
+import com.demidovn.fruitbounty.server.MetricsConsts;
 import com.demidovn.fruitbounty.server.dto.operations.response.ResponseOperation;
 import com.demidovn.fruitbounty.server.persistence.entities.User;
 import com.demidovn.fruitbounty.server.services.ClientNotifier;
@@ -11,6 +12,8 @@ import com.demidovn.fruitbounty.server.services.UserService;
 import com.demidovn.fruitbounty.server.services.game.GameNotifier;
 import com.demidovn.fruitbounty.server.services.game.UserGames;
 import java.time.Instant;
+
+import com.demidovn.fruitbounty.server.services.metrics.StatService;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +37,9 @@ public class GameChangeNotificationExecutor implements Runnable {
 
   @Autowired
   private GameNotifier gameNotifier;
+
+  @Autowired
+  private StatService statService;
 
   @Setter
   private Game game;
@@ -61,6 +67,11 @@ public class GameChangeNotificationExecutor implements Runnable {
       userService.update(user);
 
       clientNotifier.sendSelfUserInfo(user);
+    }
+
+    if (game.isWin()) {
+      statService.incCounter(MetricsConsts.GAME.WIN_ALL_STAT);
+      statService.incCounter(MetricsConsts.GAME.WIN_CONCRETE_STAT + game.getQuestType());
     }
   }
 

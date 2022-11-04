@@ -3,10 +3,9 @@ package com.demidovn.fruitbounty.game.services;
 import com.demidovn.fruitbounty.game.GameOptions;
 import com.demidovn.fruitbounty.game.exceptions.BaseGenerateQuestTriesLimitException;
 import com.demidovn.fruitbounty.game.exceptions.GenerateMissionTriesLimitException;
-import com.demidovn.fruitbounty.game.services.game.generating.brief.brief1.Brief1GameCreator;
 import com.demidovn.fruitbounty.game.services.game.generating.singleplay.CompositeGameCreator;
 import com.demidovn.fruitbounty.gameapi.model.backend.GameDescription;
-import com.demidovn.fruitbounty.game.services.game.generating.MissionGameCreator;
+import com.demidovn.fruitbounty.game.services.game.generating.StandardGameCreator;
 import com.demidovn.fruitbounty.gameapi.model.Game;
 import com.demidovn.fruitbounty.gameapi.model.GameAction;
 import com.demidovn.fruitbounty.gameapi.model.backend.QuestType;
@@ -23,13 +22,10 @@ import org.springframework.stereotype.Component;
 public class DefaultGameFacade implements GameFacade {
 
   @Autowired
-  private MissionGameCreator missionGameCreator;
+  private StandardGameCreator standardGameCreator;
 
   @Autowired
   private CompositeGameCreator compositeGameCreator;
-
-  @Autowired
-  private Brief1GameCreator brief1GameCreator;
 
   private final List<Game> games = new CopyOnWriteArrayList<>();
 
@@ -69,10 +65,12 @@ public class DefaultGameFacade implements GameFacade {
 
   private Optional<Game> createGame(GameDescription gameDescription) {
     try {
-      if (gameDescription.getQuestType() == QuestType.MISSION) {
-        return Optional.of(missionGameCreator.createNewGame(gameDescription));
-      } else if (gameDescription.getQuestType() == QuestType.BRIEF_1) {
-        return Optional.of(brief1GameCreator.createNewGame(gameDescription));
+      if (gameDescription.getQuestType() == QuestType.MISSION
+              || gameDescription.getQuestType() == QuestType.BRIEF_1
+              || gameDescription.getQuestType() == QuestType.BRIEF_2
+              || gameDescription.getQuestType() == QuestType.BRIEF_3
+              || gameDescription.getQuestType() == QuestType.BRIEF_100) {
+        return Optional.of(standardGameCreator.createNewGame(gameDescription));
       } else if (gameDescription.getQuestType() == QuestType.COMPOSITE_1 ||
                  gameDescription.getQuestType() == QuestType.COMPOSITE_2) {
         return Optional.of(compositeGameCreator.createNewGame(gameDescription));

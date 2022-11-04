@@ -231,27 +231,72 @@ body{
 /* Game-Requests */
 .btn-play{
   position: absolute;
+
+  left: 168px;
+}
+
+.play-mission-btn{
+  top: 30px;
+}
+
+.play-quests-btn{
+  top: 88px;
+}
+
+.play-1-quest-btn{
+  top: 146px;
+}
+
+.play-2-quest-btn{
+  top: 204px;
+}
+
+.play-3-quest-btn{
+  top: 262px;
+}
+
+.play-4-quest-btn{
+  top: 320px;
+}
+
+.btn-play-img{
+  position: absolute;
   cursor: pointer;
 
-  top: 30px;
-  left: 168px;
   width: 177px;
   height: 50px;
 }
 
-.play-mission-caption{
+.play-btn-caption{
   position: absolute;
   cursor: pointer;
-
   text-align: center;
   line-height: normal;
   font-size: 16px;
   font-weight: bold;
   color: #FFFFFF;
 
-  top: 38px;
-  left: 202px;
-  width: 112px;
+  width: 163px;
+
+  left: 8px;
+}
+
+.play-quests-btn-caption-min{
+  top: 27px;
+  left: 24px;
+  width: 136px;
+}
+
+.play-btn-caption-2-lines-first{
+  top: 9px;
+}
+
+.play-btn-caption-1-line{
+  top: 17px;
+}
+
+.play-btn-caption-min{
+  font-size: 12px;
 }
 
 .play-loader{
@@ -259,29 +304,36 @@ body{
   position: absolute;
   cursor: pointer;
 
-  top: 55px;
-  left: 246px;
+  top: 28px;
+  left: 80px;
   height:18px;
 }
 
-.tips-content{
-  background-color:#fff;
-  padding:10px;
-  display:none;
+.play-quests-container{
+  display: none;
 }
 
 
 /* Rating-Table */
 .top-players-rating{
+  position: absolute;
   font-size: 19px;
   font-weight: bold;
   color: #513322;
+}
 
-  /* 360px */
+.top-players-caption-img{
+  position: absolute;
+  left: 18px;
+  width: 178px;
+  height: 36px;
+}
+
+.top-players-rating-caption-text{
   position: absolute;
 
-  top: 104px;
-  left: 222px;
+  left: 71px;
+  top: 4px;
 }
 
 .top-players-container-1{
@@ -289,15 +341,17 @@ body{
   z-index: -2;
   overflow: hidden;
 
-  top: 140px;
+  top: 158px;
   left: 150px;
-  height: 226px;
+  height: 210px;
 }
 
 .top-players-container-2{
   height: 100%;
   width: 100%;
   overflow: hidden;
+
+  margin-top: 44px;
 }
 
 .top-players-container{
