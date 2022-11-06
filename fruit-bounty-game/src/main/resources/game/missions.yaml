@@ -921,27 +921,6 @@ missions:
       Чем увлекается {answer_subject}?"
     subjects: [ Маша, Аня ]
     verb: занимается
-    objects: [ балетом, пением ]
-    sentencesNum: 3
-    statementsInSentence: 2
-    verityAllocation: [ [ true, true ], [ true, false ], [ false, false ] ]
-    minAnswerInfers: 0
-    maxAnswerInfers: 0
-    nonTargetAnswers: ONLY_ONE_ANSWER_FOR_MENTIONED_IN_STATEMENTS
-    repeatsLimit: -1
-    contradictionsEnabled: true
-    rightAnswersNum: 1
-  -
-    type: MISSION_STANDARD
-    editorNote: "n subjects, nStatementsInSentence, simple: #9"
-    intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
-      При этом каждая увлекается ровно одним видом искусств.
-      Их знакомые дали следующие фразы:<br>{statements}<br>
-      Один из них (самый откровенный) оба раза говорил правду;
-      второй (самый скрытный) оба раза говорил неправду, третий (осторожный) один раз сказал правду, а другой раз – неправду.<br>
-      Чем увлекается {answer_subject}?"
-    subjects: [ Маша, Аня ]
-    verb: занимается
     objects: [ балетом, пением, живописью ]
     sentencesNum: 3
     statementsInSentence: 2
@@ -954,7 +933,7 @@ missions:
     rightAnswersNum: 1
   -
     type: MISSION_STANDARD
-    editorNote: "n subjects, nStatementsInSentence, simple: #10"
+    editorNote: "n subjects, nStatementsInSentence, simple: #9"
     intro: "{subjects} интересуются различными видами искусств. Это могут быть: {objects}.
       При этом каждая увлекается ровно одним видом искусств.
       Их знакомые дали следующие фразы:<br>{statements}<br>
