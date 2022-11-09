@@ -99,6 +99,9 @@ public class AuthExecutor implements Runnable {
       authAttemptsValidator.valid(connection);
 
       AuthOperation authOperation = conversionService.convert(operation, AuthOperation.class);
+      statService.incCounter(MetricsConsts.AUTH.ALL_TRIES_STAT);
+      statService.incCounter(MetricsConsts.AUTH.DEVICE_STAT + authOperation.getDevice());
+
       AuthType authType = authOperation.getType();
       ThirdPartyUserAuthenticator thirdPartyUserAuthenticator =
               thirdPartyUserAuthenticators.get(authType);
@@ -111,6 +114,7 @@ public class AuthExecutor implements Runnable {
       sendChatHistory(connection);
       sendCurrentGame(connection, authedUser);
       sendTopRated(connection);
+
       statService.incCounter(MetricsConsts.AUTH.SUCCESS_ALL_STAT);
       statService.incCounter(authStatsByAuthType.get(authType));
     } catch (AuthFailedException | AuthValidationException e) {

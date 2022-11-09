@@ -293,6 +293,7 @@ function connectToServer() {
     });
 
     var authPayload = getSocialNetworkPayload();
+    authPayload.device = getPlatform();
     sendAuth(authPayload);
   }, function(error) {
     postSysMsg("Connection error: " + error);
@@ -755,6 +756,48 @@ function parseQueryString() {
  */
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function getPlatform() {
+  var result = getMobileOperatingSystem();
+  if (result !== "UNKNOWN") {
+    return result;
+  }
+
+  return getOs();
+}
+
+/**
+ * Determine the mobile operating system.
+ */
+function getMobileOperatingSystem() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  // Windows Phone must come first because its UA also contains "Android"
+  if (/windows phone/i.test(userAgent)) {
+    return "WINDOWS_PHONE";
+  }
+
+  if (/android/i.test(userAgent)) {
+    return "ANDROID";
+  }
+
+  // iOS detection from: http://stackoverflow.com/a/9039885/177710
+  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    return "I_OS";
+  }
+
+  return "UNKNOWN";
+}
+
+function getOs() {
+  var result = "UNKNOWN";
+  if (navigator.appVersion.indexOf("Win")!=-1) result="WINDOWS";
+  if (navigator.appVersion.indexOf("Mac")!=-1) result="MAC_OS";
+  if (navigator.appVersion.indexOf("X11")!=-1) result="UNIX";
+  if (navigator.appVersion.indexOf("Linux")!=-1) result="LINUX";
+
+  return result;
 }
 
 

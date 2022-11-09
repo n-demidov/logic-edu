@@ -19,9 +19,11 @@ public class MetricsConsts {
     }
 
     public static class AUTH {
-        public static final String SUCCESS_ALL_STAT = "AUTHED.SUCCESS.ALL";
-        public static final String SUCCESS_BY_TYPE_STAT = "AUTHED.SUCCESS.";
-        public static final String ERRORS_STAT = "AUTHED.ERRORS";
+        public static final String ALL_TRIES_STAT = "AUTH.ALL_TRIES";
+        public static final String SUCCESS_ALL_STAT = "AUTH.SUCCESS.ALL";
+        public static final String SUCCESS_BY_TYPE_STAT = "AUTH.SUCCESS.";
+        public static final String ERRORS_STAT = "AUTH.ERRORS";
+        public static final String DEVICE_STAT = "AUTH.DEVICE.";
     }
 
     public static class SERVER {
