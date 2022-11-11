@@ -1,6 +1,7 @@
 package com.demidovn.fruitbounty.server;
 
 public class MetricsConsts {
+    public static final String SEPARATOR = ".";
 
     public static class REQUEST {
         public static final String ALL_STAT = "REQUEST.PAGE.ALL";

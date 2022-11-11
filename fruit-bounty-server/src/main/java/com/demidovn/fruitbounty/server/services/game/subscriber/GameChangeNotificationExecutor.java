@@ -72,6 +72,9 @@ public class GameChangeNotificationExecutor implements Runnable {
     if (game.isWin()) {
       statService.incCounter(MetricsConsts.GAME.WIN_ALL_STAT);
       statService.incCounter(MetricsConsts.GAME.WIN_CONCRETE_STAT + game.getQuestType());
+      if (game.getQuestType() == QuestType.MISSION) {
+        statService.incCounter(MetricsConsts.GAME.WIN_CONCRETE_STAT + game.getQuestType() + MetricsConsts.SEPARATOR + game.getMissionNumber());
+      }
     }
   }
 

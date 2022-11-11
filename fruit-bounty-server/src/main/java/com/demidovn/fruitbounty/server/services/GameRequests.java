@@ -1,6 +1,7 @@
 package com.demidovn.fruitbounty.server.services;
 
 import com.demidovn.fruitbounty.gameapi.model.Game;
+import com.demidovn.fruitbounty.gameapi.model.backend.QuestType;
 import com.demidovn.fruitbounty.server.MetricsConsts;
 import com.demidovn.fruitbounty.server.dto.operations.GameRequestInfo;
 import com.demidovn.fruitbounty.server.persistence.entities.User;
@@ -85,6 +86,9 @@ public class GameRequests {
 
     statService.incCounter(MetricsConsts.GAME.START_ALL_STAT);
     statService.incCounter(MetricsConsts.GAME.START_CONCRETE_STAT + game.getQuestType());
+    if (game.getQuestType() == QuestType.MISSION) {
+      statService.incCounter(MetricsConsts.GAME.START_CONCRETE_STAT + game.getQuestType() + MetricsConsts.SEPARATOR + game.getMissionNumber());
+    }
   }
 
 }
