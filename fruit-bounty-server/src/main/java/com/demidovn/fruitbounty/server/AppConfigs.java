@@ -25,13 +25,11 @@ public interface AppConfigs {
 
   int INITIAL_USER_SCORE = 0;
   int MIN_USER_SCORE = 0;
-  int RATING_TABLE_PLAYERS_COUNT = 500;
+  int RATING_TABLE_PLAYERS_COUNT = 300;
   int RATING_TABLE_MIN_PLAYERS_RATING = 0;
   int MIN_RATING_WITH_RARE_BOT = 850;
 
   int MAX_GAME_REQUEST_ITERATIONS_BEFORE_BOT_PLAY = 4;
-  int MIN_BOT_SCORE = 0;
-  int MAX_BOT_SCORE = RATING_TABLE_MIN_PLAYERS_RATING;
 
   // It is necessary because there is a limit of rows for my free DB account.
   int DELETTING_USERS_COUNT_LIMIT_TO_CLEAR_DB = 8000;

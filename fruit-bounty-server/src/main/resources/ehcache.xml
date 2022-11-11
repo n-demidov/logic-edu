@@ -16,7 +16,7 @@
   </cache>
 
   <defaultCache
-    maxElementsInMemory="100"
+    maxElementsInMemory="10"
     eternal="false"
     timeToIdleSeconds="300"
     timeToLiveSeconds="600"
