@@ -163,16 +163,16 @@ function playMission() {
 }
 
 function play1Quest() {
-  if (userInfo.mission < 4) {
-    alert("Доступно с 4 уровня");
+  if (userInfo.mission < 1) {
+    alert("Доступно с 1 уровня");
     return;
   }
   sendPlayRequest(PLAY_BRIEF_1_REQUEST);
 }
 
 function play2Quest() {
-  if (userInfo.mission < 8) {
-    alert("Доступно с 8 уровня");
+  if (userInfo.mission < 5) {
+    alert("Доступно с 5 уровня");
     return;
   }
   sendPlayRequest(PLAY_BRIEF_2_REQUEST);
@@ -195,8 +195,8 @@ function playHardestQuest() {
 }
 
 function showPlayQuests() {
-  if (userInfo.mission < 4) {
-    alert("Доступно с 4 уровня");
+  if (userInfo.mission < 1) {
+    alert("Доступно с 1 уровня");
     return;
   }
   $("#top-players-container-main").hide();
