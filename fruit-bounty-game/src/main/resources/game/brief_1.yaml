@@ -16,3 +16,5 @@ maxSubjectsAndObjectsNum: 4
 table: true
 minAnswerInfers: 1
 maxAnswerInfers: 1
+solution:
+  "Хм, пожалуй, тут можно составить таблицу - это упростит решение..."

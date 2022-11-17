@@ -184,7 +184,6 @@ missions:
     subjects: [ Джон, Майкл, Боб ]
     objects: [ футбол, теннис, гольф ]
     askAbout: SUBJECT
-    table: true
     rightAnswer: Боб
     solution:
       "Хм, если Кети сказала неправду, выходит, что Майкл играл в футбол..."

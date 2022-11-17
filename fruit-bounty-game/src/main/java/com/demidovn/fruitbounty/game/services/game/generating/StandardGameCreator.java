@@ -94,9 +94,7 @@ public class StandardGameCreator {
       rand.shuffle(subjects);
       rand.shuffle(objects);
 
-      intro += "<br><br><p><button id='hintBtn' onmouseup='hintBtn()' class=\"btn btn-primary\" type=\"button\" data-toggle=\"collapse\" data-target='#collapseExample' data-container='body' aria-expanded=\"false\" aria-controls=\"collapseExample\">Порассуждать</button></p><div class=\"collapse\" id=\"collapseExample\"><div id=\"solution-text\" class='card card-body background-colored'>{solution-text}</div></div>";
-      intro = intro.replace("{solution-text}", descriptor.getSolution());
-
+      intro = addSolution(descriptor, intro);
       intro = intro.replace("{subjects}", "<b>" + stringFormatter.joinList(subjects) + "</b>");
       intro = intro.replace("{objects}", "<b>" + stringFormatter.joinList(objects) + "</b>");
 
@@ -142,6 +140,7 @@ public class StandardGameCreator {
               descriptor.getMinAnswerInfers(), descriptor.getMaxAnswerInfers(), Collections.emptyMap()
       ));
 
+      intro = addSolution(descriptor, intro);
       intro = intro.replace("{subjects}", "<b>" + stringFormatter.joinList(subjects, descriptor.getLastSubjectConnector()) + "</b>");
       intro = intro.replace("{objects}", "<b>" + stringFormatter.joinList(objects, descriptor.getLastObjectConnector()) + "</b>");
       intro = intro.replace("{statements}", stringFormatter.replaceStatements(miniquestResult.statements, commonSources.generateMenNames(miniquestResult.statements.size())));
@@ -191,6 +190,16 @@ public class StandardGameCreator {
     game.setTables(createUiTables(names));
 
     return game;
+  }
+
+  private String addSolution(StandardDescriptor descriptor, String intro) {
+    if (descriptor.getSolution() == null) {
+      return intro;
+    }
+
+    intro += "<br><br><p><button id='hintBtn' onmouseup='hintBtn()' class=\"btn btn-primary\" type=\"button\" data-toggle=\"collapse\" data-target='#collapseExample' data-container='body' aria-expanded=\"false\" aria-controls=\"collapseExample\">Порассуждать</button></p><div class=\"collapse\" id=\"collapseExample\"><div id=\"solution-text\" class='card card-body background-colored'>{solution-text}</div></div>";
+    intro = intro.replace("{solution-text}", descriptor.getSolution());
+    return intro;
   }
 
   private int evaluateObjectsNum(Integer minObjectsNum, Integer maxObjectsNum, int objectsSize) {

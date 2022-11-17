@@ -25,6 +25,8 @@ function initGameUi() {
   $('#player-surrender').on("click", surrenderClicked);
   $('#subwindow-btn-next').on("click", onSubwindowClose);
   $('#subwindow-close').on("click", hideGameResultSubwindow);
+  $('#showEduVideoBtn').on("click", onShowEduVideo);
+  $('#closeEduVideoWindowBtn').on("click", onCloseEduVideo);
   $('#closeGame').on("click", onSubwindowClose);
 
   $('#firstPage').on("click", firstPage);
@@ -69,6 +71,7 @@ function resetGameInfo() {
   $('#subwindow-background').hide();
   $('#closeGame').hide();
   $('#see-solution').hide();
+  showEduVideoBtn();
   hideConfirmWindow();
 
   if (COMPOSITE_GAMES.includes(game.questType)) {
@@ -77,6 +80,13 @@ function resetGameInfo() {
   } else {
     $('#rewindPages').hide();
     $('#next-quest').hide();
+  }
+}
+
+function showEduVideoBtn() {
+  $('#showEduVideoBtn').hide();
+  if (getVideoRefFull() !== undefined) {
+    $('#showEduVideoBtn').show();
   }
 }
 
@@ -207,6 +217,38 @@ function showConfirmWindow(yesFunction, noFunction, text) {
 
 function hideConfirmWindow() {
   $("#warnwindow-background").hide();
+}
+
+function onShowEduVideo(e) {
+  $("#eduVideoWindowIframeContent").html(getVideoRefFull());
+  $("#eduVideoWindow").show();
+}
+
+function getVideoRefFull() {
+  if (game.questType === "MISSION" && userInfo.mission === 1) {
+    return getVideoRef('456239022&hash=c33b0d7792014236');
+  } else if (game.questType === "MISSION" && userInfo.mission === 2) {
+    return getVideoRef('456239023&hash=311a7a5a3df212a4');
+  } else if (game.questType === "BRIEF_1") {
+    return getVideoRef('456239024&hash=cf4e87aac6034480');
+  } else if (game.questType === "MISSION" && userInfo.mission === 8) {
+    return getVideoRef('456239025&hash=2dabd585f8464cc3');
+  } else if (game.questType === "MISSION" && userInfo.mission === 9) {
+    return getVideoRef('456239026&hash=e38c86a231519634');
+  } else if (game.questType === "BRIEF_3") {
+    return getVideoRef('456239027&hash=997a23cf5fb7a103');
+  }
+}
+
+function getVideoRef(videRef) {
+  return '<iframe src="https://vk.com/video_ext.php?oid=-217243459&id=\n' +
+      videRef +
+      '&hd=2&autoplay=1" width="360" height="570" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen></iframe>';
+}
+
+function onCloseEduVideo(e) {
+  $("#eduVideoWindow").hide();
+  $("#eduVideoWindowIframeContent").html('');
 }
 
 function onSubwindowClose(e) {

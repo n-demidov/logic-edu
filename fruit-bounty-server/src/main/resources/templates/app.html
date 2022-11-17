@@ -7,7 +7,7 @@
   <title>Logic Edu</title>
 
   <link rel="stylesheet" type="text/css" href="/style/external/bootstrap.min.css?v=2">
-  <link rel="stylesheet" type="text/css" href="/style/style.css?v=3">
+  <link rel="stylesheet" type="text/css" href="/style/style.css?v=5">
 </head>
 <body>
 <noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled. Please enable Javascript and reload this page!</h2></noscript>
@@ -156,19 +156,21 @@
             Новый опрос
           </button>
 
-          <!-- Give an answer -->
-          <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span>Ответить</span>
-              <span class="caret"></span>
-            </button>
+          <div class="btn-group" role="group" aria-label="">
+            <!-- Give an answer -->
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span>Ответить</span>
+                <span class="caret"></span>
+              </button>
+              <ul id="answers" class="dropdown-menu background-colored">
+                <!-- Dynamic content here -->
+              </ul>
+            </div>
 
-            <ul id="answers" class="dropdown-menu background-colored">
-              <!-- Dynamic content here -->
-            </ul>
+            <button id="showEduVideoBtn" type="button" class="btn-show-edu-video btn btn-primary">Обучающее видео</button>
+            <button id="closeGame" type="button" class="btn btn-success">Закрыть</button>
           </div>
-
-          <button id="closeGame" type="button" class="btn-close-game btn btn-success">Закрыть</button>
 
         </div>
 
@@ -309,6 +311,14 @@
   </div>
 </div>
 
+<!-- Edu video window -->
+<div id="eduVideoWindow" class="eduVideoWindow">
+  <div class="eduVideoWindow-content">
+    <div id="eduVideoWindowIframeContent"></div>
+    <button id="closeEduVideoWindowBtn" class="btn btn-primary closeEduVideoWindowBtn" type="submit">Закрыть</button>
+  </div>
+</div>
+
 <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
 
 <script defer src="/js/external/jquery-3.2.1.slim.min.js?v=2"></script>
@@ -324,7 +334,7 @@
 <script defer src="/localization/main-ui.js"></script>
 <script defer src="/js/l10n-wrapper.js"></script>
 <script defer src="/js/screen-params.js"></script>
-<script defer src="/js/game.js?v=3"></script>
+<script defer src="/js/game.js?v=5"></script>
 <script defer src="/js/app.js?v=4"></script>
 </body>
 </html>
