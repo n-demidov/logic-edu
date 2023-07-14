@@ -42,8 +42,6 @@ function initGameUi() {
 }
 
 function processGameStartedOperation(newGame) {
-  showAdds();
-
   window.game = newGame;
   $('.background-img').attr('src', imgGameScreen.src);
 
@@ -60,9 +58,9 @@ function processGameStartedOperation(newGame) {
 
   if (game.showTables) {
     paintStatusTables(newGame);
-    turnProgress();
+    // turnProgress();
   } else {
-    turnNotepad();
+    // turnNotepad();
   }
 }
 
@@ -252,7 +250,7 @@ function onCloseEduVideo(e) {
 }
 
 function onSubwindowClose(e) {
-  if (!gameFinishedWithWin && getRandomInt(1, 101) <= 75) {
+  if (!gameFinishedWithWin) {
     showAdds();
   }
 

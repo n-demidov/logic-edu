@@ -1,0 +1,18 @@
+type: STANDARD
+editorNote: "table-1"
+intro: "В школе убежали {subjects}. Учитель просит вас помочь найти куда убежал {answer_subject}.
+  Убежать он мог {objects}.
+  <br><br>
+  Дети дали следующие подсказки:<br>{statements}<br>
+
+  Куда убежал {answer_subject}?"
+subjects: [ котенок, щенок, попугай, кролик, хомяк, хамелеон ]
+verbPositive: убежал
+verbNegative: не убегал
+objects: [ под крыльцо, в сад, на крышу, на чердак, во двор, в школьный класс, в столовую, в коридор, в погреб ]
+lastObjectConnector: или
+minSubjectsAndObjectsNum: 2
+maxSubjectsAndObjectsNum: 4
+table: true
+minAnswerInfers: 1
+maxAnswerInfers: 1

@@ -11,6 +11,10 @@ public class GameOptions {
   public static final String MISSIONS_CONFIG = "game/missions.yaml";
   public static final String COMMON_SOURCES_CONFIG = "game/common_sources.yaml";
   public static final String BRIEF_1_CONFIG = "game/brief_1.yaml";
+  public static final String TABLE_1_CONFIG = "game/table_1.yaml";
+  public static final String TABLE_2_CONFIG = "game/table_2.yaml";
+  public static final String TABLE_3_CONFIG = "game/table_3.yaml";
+  public static final String TABLE_3_2_CONFIG = "game/table_3_2.yaml";
   public static final String BRIEF_2_CONFIG = "game/brief_2.yaml";
   public static final String BRIEF_3_CONFIG = "game/brief_3.yaml";
   public static final String BRIEF_100_CONFIG = "game/brief_100.yaml";
@@ -23,7 +27,7 @@ public class GameOptions {
 
   public static int GENERATE_QUESTS_TRIES_LIMIT = 100;
   public static int GENERATE_QUESTS_SENTENCES_TRIES_LIMIT = 100;
-  public static int GENERATE_MISSIONS_TRIES_LIMIT = 10;
+  public static int GENERATE_MISSIONS_TRIES_LIMIT = 100;
 
   public static final String CONFIG_PROPERTIES = "config.properties";
 
@@ -33,6 +37,9 @@ public class GameOptions {
     public static int BRIEF_2 = 15;
     public static int BRIEF_3 = 30;
     public static int BRIEF_100 = 500;
+    public static int TABLE_1 = 3;
+    public static int TABLE_2 = 8;
+    public static int TABLE_3 = 16;
     public static int COMPOSITE = 2000;
   }
 

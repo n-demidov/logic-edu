@@ -86,6 +86,20 @@ body{
   z-index: -2;
 }
 
+.background-patch-img{
+  /* center */
+  position: absolute;
+  transform: translate(-50%, -50%);
+
+  /* 360px */
+  top: 21%;
+  left: 71%;
+  width: 185px;
+  height: 54px;
+
+  z-index: -2;
+}
+
 .background{
   /* 360px */
   min-width: 360px;
@@ -236,7 +250,7 @@ body{
 }
 
 .play-mission-btn{
-  top: 30px;
+  top: 18px;
 }
 
 .play-quests-btn{
@@ -244,11 +258,11 @@ body{
 }
 
 .play-1-quest-btn{
-  top: 146px;
+  top: 76px;
 }
 
 .play-2-quest-btn{
-  top: 204px;
+  top: 134px;
 }
 
 .play-3-quest-btn{
@@ -283,8 +297,8 @@ body{
 
 .play-quests-btn-caption-min{
   top: 27px;
-  left: 24px;
-  width: 136px;
+  left: 10px;
+  width: 150px;
 }
 
 .play-btn-caption-2-lines-first{
@@ -320,6 +334,9 @@ body{
   font-size: 19px;
   font-weight: bold;
   color: #513322;
+
+  left: 150px;
+  top: 192px;
 }
 
 .top-players-caption-img{
@@ -341,17 +358,15 @@ body{
   z-index: -2;
   overflow: hidden;
 
-  top: 158px;
+  top: 228px;
   left: 150px;
-  height: 210px;
+  height: 149px;
 }
 
 .top-players-container-2{
   height: 100%;
   width: 100%;
   overflow: hidden;
-
-  margin-top: 44px;
 }
 
 .top-players-container{

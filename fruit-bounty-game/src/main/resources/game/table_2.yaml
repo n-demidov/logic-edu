@@ -1,0 +1,18 @@
+type: STANDARD
+editorNote: "table-2"
+intro: "Вам надо доставить письмо. Адресатом указан мистер {answer_subject}. Найти его можно в спортивном клубе.<br>
+  Придя на место, вы узнаёте от администратора, что джентельмены - {subjects} - только что
+  разошлись играть в различные виды спорта: {objects}.<br><br>
+  
+  Окружающие сказали вам следующее:<br>{statements}<br>
+  
+  Куда пошел играть мистер {answer_subject}?"
+subjects: [ Бэлл, Грант, Дигби, Мартин, Найтли, Стоун, Питерс, Уайт, Эванс ]
+verbPositive: пошел играть в
+verbNegative: не ходил играть в
+objects: [ бадминтон, гольф, дартс, крокет, поло, регби, сквош, теннис, футбол ]
+minSubjectsAndObjectsNum: 3
+maxSubjectsAndObjectsNum: 5
+table: true
+minAnswerInfers: 2
+maxAnswerInfers: 3
