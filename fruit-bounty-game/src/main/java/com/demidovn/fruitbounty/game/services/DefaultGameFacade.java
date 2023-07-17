@@ -20,7 +20,6 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class DefaultGameFacade implements GameFacade {
-  private static final int CHANCE_TO_JUDI_QUEST_IN_TABLE_3 = 20;
 
   @Autowired
   private StandardGameCreator standardGameCreator;
@@ -29,19 +28,10 @@ public class DefaultGameFacade implements GameFacade {
   private CompositeGameCreator compositeGameCreator;
 
   private final List<Game> games = new CopyOnWriteArrayList<>();
-  private static final Randomizer rand = new Randomizer();
 
   @Override
   public Game startGame(GameDescription gameDescription) {
     Optional<Game> game;
-
-    if (gameDescription.getQuestType() == QuestType.TABLE_3) {
-      int random = rand.generateFromRange(1, 100);
-      if (CHANCE_TO_JUDI_QUEST_IN_TABLE_3 >= random) {
-        gameDescription.setQuestType(QuestType.TABLE_3_2);
-      }
-    }
-
     int triesCount = 1;
     do {
       game = createGame(gameDescription);
@@ -79,10 +69,6 @@ public class DefaultGameFacade implements GameFacade {
               || gameDescription.getQuestType() == QuestType.BRIEF_1
               || gameDescription.getQuestType() == QuestType.BRIEF_2
               || gameDescription.getQuestType() == QuestType.BRIEF_3
-              || gameDescription.getQuestType() == QuestType.TABLE_1
-              || gameDescription.getQuestType() == QuestType.TABLE_2
-              || gameDescription.getQuestType() == QuestType.TABLE_3
-              || gameDescription.getQuestType() == QuestType.TABLE_3_2
               || gameDescription.getQuestType() == QuestType.BRIEF_100) {
         return Optional.of(standardGameCreator.createNewGame(gameDescription));
       } else if (gameDescription.getQuestType() == QuestType.COMPOSITE_1 ||

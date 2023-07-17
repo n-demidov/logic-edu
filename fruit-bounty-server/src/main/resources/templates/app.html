@@ -19,7 +19,6 @@
   <div class="background-container">
     <div class="background">
       <img class="background-img" src="/img/components/lobby_background.png">
-      <img class="background-patch-img" src="/img/components/lobby_background_patch.png">
 
       <!-- Lobby window -->
       <div id="lobby-window" class="lobby-window background-left">
@@ -48,13 +47,13 @@
         </div>
 
         <!-- Rating table -->
-        <!-- Rating table caption -->
-        <div class="top-players-rating">
-          <img class="top-players-caption-img" src="/img/components/top_players_caption.png">
-          <span id="top-players-rating" class="top-players-rating-caption-text">Play</span>
-        </div>
-
         <div id="top-players-container-main" class="top-players-container-1">
+          <!-- Rating table caption -->
+          <div class="top-players-rating">
+            <img class="top-players-caption-img" src="/img/components/top_players_caption.png">
+            <span id="top-players-rating" class="top-players-rating-caption-text">Play</span>
+          </div>
+
           <!-- Rating table -->
           <div class="top-players-container-2">
             <div id="top-players-container" class="top-players-container">
@@ -72,64 +71,42 @@
           </div>
         </div>
 
-        <div id="play-1-quest-btn" class="btn-play play-1-quest-btn">
-          <img class="btn-play-img" src="/img/components/play_button.png">
-          <div class="play-btn-caption play-btn-caption-2-lines-first">ИГРАТЬ (Средне)</div>
-          <div class="play-btn-caption play-btn-caption-min play-quests-btn-caption-min">Доступно с 9 рейтинга</div>
+        <div id="play-quests-btn" class="btn-play play-quests-btn" data-toggle="tooltip" data-placement="bottom" data-container="body" data-selector="#play-quests-btn" title="Доступно с 7 уровня">
+          <img class="btn-play-img" src="/img/components/return_button.png">
+          <div class="play-btn-caption play-btn-caption-2-lines-first">Квесты</div>
+          <div class="play-btn-caption play-btn-caption-min play-quests-btn-caption-min">Доступно с 1 уровня</div>
         </div>
 
-        <div id="play-2-quest-btn" class="btn-play play-2-quest-btn">
-          <img class="btn-play-img" src="/img/components/play_button.png">
-          <div class="play-btn-caption play-btn-caption-2-lines-first">ИГРАТЬ (Сложно)</div>
-          <div class="play-btn-caption play-btn-caption-min play-quests-btn-caption-min">Доступно с 30 рейтинга</div>
+        <div id="play-quests-container" class="play-quests-container">
+          <div id="hide-play-quests-btn" class="btn-play play-quests-btn">
+            <img class="btn-play-img" src="/img/components/return_button.png">
+            <div class="play-btn-caption play-btn-caption-1-line">Вернуться</div>
+          </div>
+
+          <div id="play-1-quest-btn" class="btn-play play-1-quest-btn">
+            <img class="btn-play-img" src="/img/components/play_button.png">
+            <div class="play-btn-caption play-btn-caption-2-lines-first">Разнести письма</div>
+            <div class="play-btn-caption play-btn-caption-min play-quests-btn-caption-min">Доступно с 1 уровня</div>
+          </div>
+
+          <div id="play-2-quest-btn" class="btn-play play-2-quest-btn">
+            <img class="btn-play-img" src="/img/components/play_button.png">
+            <div class="play-btn-caption play-btn-caption-2-lines-first">Найти дом</div>
+            <div class="play-btn-caption play-btn-caption-min play-quests-btn-caption-min">Доступно с 5 уровня</div>
+          </div>
+
+          <div id="play-medium-quest-btn" class="btn-play play-3-quest-btn">
+            <img class="btn-play-img" src="/img/components/play_button.png">
+            <div class="play-btn-caption play-btn-caption-2-lines-first">Отыскать котика</div>
+            <div class="play-btn-caption play-btn-caption-min play-quests-btn-caption-min">Доступно с 10 уровня</div>
+          </div>
+
+          <div id="play-hardest-quest-btn" class="btn-play play-4-quest-btn">
+            <img class="btn-play-img" src="/img/components/play_button.png">
+            <div class="play-btn-caption play-btn-caption-2-lines-first">Соревнования</div>
+            <div class="play-btn-caption play-btn-caption-min play-quests-btn-caption-min">Доступно с 30 уровня</div>
+          </div>
         </div>
-
-
-<!--        Old buttons-->
-<!--        <div id="play-mission" class="btn-play play-mission-btn">-->
-<!--          <img class="btn-play-img" src="/img/components/play_button.png">-->
-<!--          <div>-->
-<!--            <div id="play-mission-caption" class="play-btn-caption play-btn-caption-2-lines-first"></div>-->
-<!--            <img id="play-loader" class="play-loader" src="https://thumbs.gfycat.com/EmptyDeliriousBluefish-size_restricted.gif" alt="Smiley face">-->
-<!--          </div>-->
-<!--        </div>-->
-
-<!--        <div id="play-quests-btn" class="btn-play play-quests-btn" data-toggle="tooltip" data-placement="bottom" data-container="body" data-selector="#play-quests-btn" title="Доступно с 7 уровня">-->
-<!--          <img class="btn-play-img" src="/img/components/return_button.png">-->
-<!--          <div class="play-btn-caption play-btn-caption-2-lines-first">Квесты</div>-->
-<!--          <div class="play-btn-caption play-btn-caption-min play-quests-btn-caption-min">Доступно с 1 уровня</div>-->
-<!--        </div>-->
-
-<!--        <div id="play-quests-container" class="play-quests-container">-->
-<!--          <div id="hide-play-quests-btn" class="btn-play play-quests-btn">-->
-<!--            <img class="btn-play-img" src="/img/components/return_button.png">-->
-<!--            <div class="play-btn-caption play-btn-caption-1-line">Вернуться</div>-->
-<!--          </div>-->
-
-<!--          <div id="play-1-quest-btn" class="btn-play play-1-quest-btn">-->
-<!--            <img class="btn-play-img" src="/img/components/play_button.png">-->
-<!--            <div class="play-btn-caption play-btn-caption-2-lines-first">Разнести письма</div>-->
-<!--            <div class="play-btn-caption play-btn-caption-min play-quests-btn-caption-min">Доступно с 1 уровня</div>-->
-<!--          </div>-->
-
-<!--          <div id="play-2-quest-btn" class="btn-play play-2-quest-btn">-->
-<!--            <img class="btn-play-img" src="/img/components/play_button.png">-->
-<!--            <div class="play-btn-caption play-btn-caption-2-lines-first">Найти дом</div>-->
-<!--            <div class="play-btn-caption play-btn-caption-min play-quests-btn-caption-min">Доступно с 5 уровня</div>-->
-<!--          </div>-->
-
-<!--          <div id="play-medium-quest-btn" class="btn-play play-3-quest-btn">-->
-<!--            <img class="btn-play-img" src="/img/components/play_button.png">-->
-<!--            <div class="play-btn-caption play-btn-caption-2-lines-first">Отыскать котика</div>-->
-<!--            <div class="play-btn-caption play-btn-caption-min play-quests-btn-caption-min">Доступно с 10 уровня</div>-->
-<!--          </div>-->
-
-<!--          <div id="play-hardest-quest-btn" class="btn-play play-4-quest-btn">-->
-<!--            <img class="btn-play-img" src="/img/components/play_button.png">-->
-<!--            <div class="play-btn-caption play-btn-caption-2-lines-first">Соревнования</div>-->
-<!--            <div class="play-btn-caption play-btn-caption-min play-quests-btn-caption-min">Доступно с 30 уровня</div>-->
-<!--          </div>-->
-<!--        </div>-->
 
       </div>
 

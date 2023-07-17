@@ -78,22 +78,6 @@ public class StandardGameCreator {
       descriptor = descriptorService.getBrief100Descriptor();
       game = new Game(QuestType.BRIEF_100, GameOptions.GameRating.BRIEF_100, gameDescription.getPlayers(),
               GameOptions.TimeGameMs.DEFAULT);
-    } else if (gameDescription.getQuestType() == QuestType.TABLE_1) {
-      descriptor = descriptorService.getTable1Descriptor();
-      game = new Game(QuestType.TABLE_1, GameOptions.GameRating.TABLE_1, gameDescription.getPlayers(),
-          GameOptions.TimeGameMs.DEFAULT);
-    } else if (gameDescription.getQuestType() == QuestType.TABLE_2) {
-      descriptor = descriptorService.getTable2Descriptor();
-      game = new Game(QuestType.TABLE_2, GameOptions.GameRating.TABLE_2, gameDescription.getPlayers(),
-          GameOptions.TimeGameMs.DEFAULT);
-    } else if (gameDescription.getQuestType() == QuestType.TABLE_3) {
-      descriptor = descriptorService.getTable3Descriptor();
-      game = new Game(QuestType.TABLE_3, GameOptions.GameRating.TABLE_3, gameDescription.getPlayers(),
-          GameOptions.TimeGameMs.DEFAULT);
-    } else if (gameDescription.getQuestType() == QuestType.TABLE_3_2) {
-      descriptor = descriptorService.getTable3_2Descriptor();
-      game = new Game(QuestType.TABLE_3_2, GameOptions.GameRating.TABLE_3, gameDescription.getPlayers(),
-          GameOptions.TimeGameMs.DEFAULT);
     } else {
       throw new IllegalStateException("Unknown gameType=" + gameDescription);
     }

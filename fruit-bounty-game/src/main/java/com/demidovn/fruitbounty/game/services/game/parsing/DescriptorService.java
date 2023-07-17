@@ -41,10 +41,6 @@ public class DescriptorService {
     private StandardDescriptor brief1Descriptor;
     private StandardDescriptor brief2Descriptor;
     private StandardDescriptor brief3Descriptor;
-    private StandardDescriptor table1Descriptor;
-    private StandardDescriptor table2Descriptor;
-    private StandardDescriptor table3Descriptor;
-    private StandardDescriptor table3_2Descriptor;
     private StandardDescriptor brief100Descriptor;
 
     @PostConstruct
@@ -54,10 +50,6 @@ public class DescriptorService {
         StandardDescriptor brief1Descriptor = parseBrief1Descriptor();
         StandardDescriptor brief2Descriptor = parseBrief2Descriptor();
         StandardDescriptor brief3Descriptor = parseBrief3Descriptor();
-        StandardDescriptor table1Descriptor = parseTable1Descriptor();
-        StandardDescriptor table2Descriptor = parseTable2Descriptor();
-        StandardDescriptor table3Descriptor = parseTable3Descriptor();
-        StandardDescriptor table3_2Descriptor = parseTable3_2Descriptor();
         StandardDescriptor brief100Descriptor = parseBrief100Descriptor();
 
         Map<Integer, MissionDescriptor> missionsByLevel = new HashMap<>();
@@ -77,18 +69,6 @@ public class DescriptorService {
         validStandardFields(brief1Descriptor);
         setStandardFields(brief1Descriptor);
 
-        validStandardFields(table1Descriptor);
-        setStandardFields(table1Descriptor);
-
-        validStandardFields(table2Descriptor);
-        setStandardFields(table2Descriptor);
-
-        validStandardFields(table3Descriptor);
-        setStandardFields(table3Descriptor);
-
-        validStandardFields(table3_2Descriptor);
-        setStandardFields(table3_2Descriptor);
-
         validStandardFields(brief2Descriptor);
         setStandardFields(brief2Descriptor);
 
@@ -100,10 +80,6 @@ public class DescriptorService {
 
         this.missionsDescriptor = missionsDescriptor;
         this.brief1Descriptor = brief1Descriptor;
-        this.table1Descriptor = table1Descriptor;
-        this.table2Descriptor = table2Descriptor;
-        this.table3Descriptor = table3Descriptor;
-        this.table3_2Descriptor = table3_2Descriptor;
         this.brief2Descriptor = brief2Descriptor;
         this.brief3Descriptor = brief3Descriptor;
         this.brief100Descriptor = brief100Descriptor;
@@ -135,22 +111,6 @@ public class DescriptorService {
         return brief1Descriptor;
     }
 
-    public StandardDescriptor getTable1Descriptor() {
-        return table1Descriptor;
-    }
-
-    public StandardDescriptor getTable2Descriptor() {
-        return table2Descriptor;
-    }
-
-    public StandardDescriptor getTable3Descriptor() {
-        return table3Descriptor;
-    }
-
-    public StandardDescriptor getTable3_2Descriptor() {
-        return table3_2Descriptor;
-    }
-
     public StandardDescriptor getBrief2Descriptor() {
         return brief2Descriptor;
     }
@@ -175,26 +135,6 @@ public class DescriptorService {
 
     private StandardDescriptor parseBrief1Descriptor() throws IOException {
         InputStream input = getClass().getClassLoader().getResourceAsStream(GameOptions.BRIEF_1_CONFIG);
-        return objectMapper.readValue(input, StandardDescriptor.class);
-    }
-
-    private StandardDescriptor parseTable1Descriptor() throws IOException {
-        InputStream input = getClass().getClassLoader().getResourceAsStream(GameOptions.TABLE_1_CONFIG);
-        return objectMapper.readValue(input, StandardDescriptor.class);
-    }
-
-    private StandardDescriptor parseTable2Descriptor() throws IOException {
-        InputStream input = getClass().getClassLoader().getResourceAsStream(GameOptions.TABLE_2_CONFIG);
-        return objectMapper.readValue(input, StandardDescriptor.class);
-    }
-
-    private StandardDescriptor parseTable3Descriptor() throws IOException {
-        InputStream input = getClass().getClassLoader().getResourceAsStream(GameOptions.TABLE_3_CONFIG);
-        return objectMapper.readValue(input, StandardDescriptor.class);
-    }
-
-    private StandardDescriptor parseTable3_2Descriptor() throws IOException {
-        InputStream input = getClass().getClassLoader().getResourceAsStream(GameOptions.TABLE_3_2_CONFIG);
         return objectMapper.readValue(input, StandardDescriptor.class);
     }
 

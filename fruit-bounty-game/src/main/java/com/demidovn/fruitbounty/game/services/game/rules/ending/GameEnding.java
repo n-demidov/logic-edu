@@ -6,7 +6,7 @@ import com.demidovn.fruitbounty.gameapi.model.Player;
 import com.demidovn.fruitbounty.gameapi.model.backend.QuestType;
 
 public abstract class GameEnding {
-  private final FixedAddedScoreCalculator addedScoreCalculator = new FixedAddedScoreCalculator();
+  private final AddedScoreCalculator addedScoreCalculator = new AddedScoreCalculator();
 
   public void checkGameEndingByMoving(GameAction gameAction) {
     String answer = gameAction.getAnswer();
@@ -47,36 +47,30 @@ public abstract class GameEnding {
   }
 
   private int getScore(Game game, Player player) {
-//    if (game.getQuestType() == QuestType.MISSION) {
-//      if (game.isWin()) {
-//        return game.getMissionNumber() + 1;
-//      } else {
-//        return 0;
-//      }
-//    } else {
-//      int winnerScore;
-//      int looserScore;
-//
-//      if (game.isWin()) {
-//        winnerScore = player.getScore();
-//        looserScore = game.getBaseRating();
-//      } else {
-//        winnerScore = game.getBaseRating();
-//        looserScore = player.getScore();
-//      }
-//
-//      int winnerAddedScore = addedScoreCalculator.findWinnerAddedScore(winnerScore, looserScore);
-//      if (game.isWin()) {
-//        return winnerAddedScore;
-//      } else {
-//        return -winnerAddedScore;
-//      }
-//    }
-
-    if (game.isWin()) {
-      return addedScoreCalculator.getWinScore(game.getQuestType());
+    if (game.getQuestType() == QuestType.MISSION) {
+      if (game.isWin()) {
+        return game.getMissionNumber() + 1;
+      } else {
+        return 0;
+      }
     } else {
-      return addedScoreCalculator.getLooseScore(game.getQuestType());
+      int winnerScore;
+      int looserScore;
+
+      if (game.isWin()) {
+        winnerScore = player.getScore();
+        looserScore = game.getBaseRating();
+      } else {
+        winnerScore = game.getBaseRating();
+        looserScore = player.getScore();
+      }
+
+      int winnerAddedScore = addedScoreCalculator.findWinnerAddedScore(winnerScore, looserScore);
+      if (game.isWin()) {
+        return winnerAddedScore;
+      } else {
+        return -winnerAddedScore;
+      }
     }
   }
 

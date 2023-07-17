@@ -29,10 +29,6 @@ var PLAY_BRIEF_2_REQUEST = "BRIEF_2";
 var PLAY_BRIEF_3_REQUEST = "BRIEF_3";
 var PLAY_BRIEF_HARDEST_REQUEST = "BRIEF_100";
 
-var PLAY_TABLE_1_REQUEST = "TABLE_1";
-var PLAY_TABLE_2_REQUEST = "TABLE_2";
-var PLAY_TABLE_3_REQUEST = "TABLE_3";
-
 // var PLAY_BRIEF_1_REQUEST = "BRIEF_1";
 var PLAY_COMPOSITE_1_REQUEST = "COMPOSITE_1";
 var PLAY_COMPOSITE_2_REQUEST = "COMPOSITE_2";
@@ -163,26 +159,23 @@ function sendPlayRequest(playGameType) {
 }
 
 function playMission() {
-  sendPlayRequest(PLAY_TABLE_1_REQUEST);
-  showAdds();
+  sendPlayRequest(PLAY_MISSION_REQUEST);
 }
 
 function play1Quest() {
-  if (userInfo.score < 9) {
-    alert("Доступно с 9 рейтинга");
+  if (userInfo.mission < 1) {
+    alert("Доступно с 1 уровня");
     return;
   }
-  sendPlayRequest(PLAY_TABLE_2_REQUEST);
-  showAdds();
+  sendPlayRequest(PLAY_BRIEF_1_REQUEST);
 }
 
 function play2Quest() {
-  if (userInfo.score < 30) {
-    alert("Доступно с 30 рейтинга");
+  if (userInfo.mission < 5) {
+    alert("Доступно с 5 уровня");
     return;
   }
-  sendPlayRequest(PLAY_TABLE_3_REQUEST);
-  showAdds();
+  sendPlayRequest(PLAY_BRIEF_2_REQUEST);
 }
 
 function playMediumQuest() {
@@ -330,7 +323,7 @@ function processUserInfoOperation(data) {
   $("#userImg").attr("src", userInfo.img);
   $("#user-resume-rating-caption").text("Рейтинг: " + userInfo.score);
   $("#userName").text(userInfo.name);
-  $("#userScore").text(localize('score') + ': ' + userInfo.score);
+  $("#userScore").text(localize('level') + ': ' + userInfo.mission);
   $("#user-info-data").attr("data-original-title", concatGameStats(userInfo));
 
   updatePlayButtonText();
@@ -455,8 +448,7 @@ function initUi() {
 }
 
 function updatePlayButtonText() {
-  // var playNextLevelText = localize("play-next-level").replace("{level}", userInfo.mission);
-  var playNextLevelText = "ИГРАТЬ (Легко)";
+  var playNextLevelText = localize("play-next-level").replace("{level}", userInfo.mission);
   $("#play-mission-caption").html(playNextLevelText);
 }
 
@@ -491,8 +483,8 @@ function showMainWindow() {
 }
 
 function concatGameStats(user) {
-  return ''
-    + 'Рейтинг:' + user.score
+  return 'Уровень:' + user.mission
+    + ' ' + 'Рейтинг:' + user.score
     + ' ' + localize('wins') + ':' + user.wins
     + ' ' + localize('defeats') + ":" + user.defeats;
 }
@@ -575,9 +567,9 @@ function storeUuid() {
 
 /* === Adds === */
 async function showAdds() {
-  // if (userInfo.mission < MIN_USER_LEVEL_FOR_ADDS) {
-  //   return;
-  // }
+  if (userInfo.mission < MIN_USER_LEVEL_FOR_ADDS) {
+    return;
+  }
 
   if (getState() === VK_TYPE) {
     window.vkBridge.send("VKWebAppCheckNativeAds", {"ad_format": "interstitial"});
