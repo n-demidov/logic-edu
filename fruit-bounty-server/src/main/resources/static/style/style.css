@@ -1,7 +1,7 @@
 body{
   background-image:url(../img/background/background.png);
   background-position: top;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-color: #735643;
   /*font-family: "Showcard Gothic", "Showcard gothic cyrillic";*/
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
