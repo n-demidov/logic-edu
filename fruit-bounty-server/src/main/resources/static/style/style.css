@@ -288,7 +288,7 @@ body{
 }
 
 .play-btn-caption-2-lines-first{
-  top: 9px;
+  top: 7px;
 }
 
 .play-btn-caption-1-line{
@@ -332,8 +332,8 @@ body{
 .top-players-rating-caption-text{
   position: absolute;
 
-  left: 71px;
-  top: 4px;
+  left: 210px;
+  top: 70px;
 }
 
 .top-players-container-1{
@@ -341,17 +341,15 @@ body{
   z-index: -2;
   overflow: hidden;
 
-  top: 158px;
+  top: 142px;
   left: 150px;
-  height: 210px;
+  height: 224px;
 }
 
 .top-players-container-2{
   height: 100%;
   width: 100%;
   overflow: hidden;
-
-  margin-top: 44px;
 }
 
 .top-players-container{

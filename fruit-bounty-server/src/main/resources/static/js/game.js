@@ -42,7 +42,7 @@ function initGameUi() {
 }
 
 function processGameStartedOperation(newGame) {
-  showAdds();
+  // showAdds();
 
   window.game = newGame;
   $('.background-img').attr('src', imgGameScreen.src);
@@ -86,7 +86,7 @@ function resetGameInfo() {
 function showEduVideoBtn() {
   $('#showEduVideoBtn').hide();
   if (getVideoRefFull() !== undefined) {
-    $('#showEduVideoBtn').show();
+    // $('#showEduVideoBtn').show();
   }
 }
 
@@ -252,7 +252,8 @@ function onCloseEduVideo(e) {
 }
 
 function onSubwindowClose(e) {
-  if (!gameFinishedWithWin && getRandomInt(1, 101) <= 75) {
+  // if (!gameFinishedWithWin && getRandomInt(1, 101) <= 75) {
+  if (!gameFinishedWithWin) {
     showAdds();
   }
 
