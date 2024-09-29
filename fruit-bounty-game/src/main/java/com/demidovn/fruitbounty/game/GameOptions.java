@@ -22,7 +22,7 @@ public class GameOptions {
   public static int MAX_COMPLEXITY_COUNTER = 6;
 
   public static int GENERATE_QUESTS_TRIES_LIMIT = 100;
-  public static int GENERATE_QUESTS_SENTENCES_TRIES_LIMIT = 100;
+  public static int GENERATE_QUESTS_SENTENCES_TRIES_LIMIT = 1_000;
   public static int GENERATE_MISSIONS_TRIES_LIMIT = 100;
 
   public static final String CONFIG_PROPERTIES = "config.properties";
